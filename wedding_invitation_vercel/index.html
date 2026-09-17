@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#5d1f2f" />
+  <title>Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="petals" id="petals"></div>
+
+  <main class="page-shell">
+    <section class="intro" id="intro">
+      <p class="eyebrow">YOU'RE INVITED</p>
+      <h1>A Celebration of Love</h1>
+      <p class="intro-copy">A little surprise is waiting for you.</p>
+
+      <div class="envelope-wrap" id="envelopeWrap" role="button" tabindex="0" aria-label="Open wedding invitation">
+        <div class="envelope" id="envelope">
+          <div class="back"></div>
+          <div class="letter-preview">
+            <div class="monogram">A ♥ S</div>
+            <p>With love</p>
+          </div>
+          <div class="front-left"></div>
+          <div class="front-right"></div>
+          <div class="front-bottom"></div>
+          <div class="flap"></div>
+          <div class="wax-seal">♥</div>
+        </div>
+      </div>
+
+      <button class="open-btn" id="openBtn">Open Invitation</button>
+    </section>
+
+    <section class="invitation hidden" id="invitation">
+      <div class="ornament">✦</div>
+      <p class="eyebrow">TOGETHER WITH OUR FAMILIES</p>
+      <h2 class="script-title">We are getting married</h2>
+
+      <p class="lead">
+        With joyful hearts, we invite you to celebrate the beginning of our forever.
+      </p>
+
+      <div class="scratch-section">
+        <p class="scratch-label">Scratch below to reveal the wedding date</p>
+        <div class="scratch-card" id="scratchCard">
+          <div class="date-reveal">
+            <span class="small">WEDDING</span>
+            <strong>25 October 2026</strong>
+            <span>Sunday</span>
+          </div>
+          <canvas id="scratchCanvas" aria-label="Scratch to reveal the wedding date"></canvas>
+        </div>
+        <p class="scratch-hint" id="scratchHint">Use your finger or mouse ✨</p>
+      </div>
+
+      <div class="event-grid">
+        <article class="event-card">
+          <div class="event-icon">🥂</div>
+          <p class="event-kicker">Reception</p>
+          <h3>24 October 2026</h3>
+          <p>Saturday</p>
+        </article>
+
+        <article class="event-card">
+          <div class="event-icon">💍</div>
+          <p class="event-kicker">Wedding</p>
+          <h3>25 October 2026</h3>
+          <p>Sunday</p>
+        </article>
+      </div>
+
+      <div class="venue-card">
+        <p class="event-kicker">Venue</p>
+        <h3>Nature Knots</h3>
+        <p class="venue-copy">Join us as we celebrate surrounded by love, laughter, and beautiful memories.</p>
+        <a
+          class="map-btn"
+          href="https://www.google.com/maps/place/NATURE+KNOTS/@13.1674464,77.4554111,149a,48y,0.22t/data=!3m1!1e3!4m6!3m5!1s0x3bae27e896b51feb:0xc811a455b02dee52!8m2!3d13.1674358!4d77.4558016!16s%2Fg%2F11t2r93t91?entry=ttu&g_ep=EgoyMDI2MDkxNC4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Location
+        </a>
+      </div>
+
+      <div class="countdown" id="countdown">
+        <div><strong id="days">--</strong><span>Days</span></div>
+        <div><strong id="hours">--</strong><span>Hours</span></div>
+        <div><strong id="minutes">--</strong><span>Minutes</span></div>
+        <div><strong id="seconds">--</strong><span>Seconds</span></div>
+      </div>
+
+      <p class="closing-script">Your presence will make our day even more special.</p>
+      <p class="footer-note">Save the date · 25.10.2026</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
