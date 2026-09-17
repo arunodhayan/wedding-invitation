@@ -68,7 +68,9 @@ function setupScratchCard() {
     ctx.font = '600 12px Montserrat, sans-serif';
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText("SCRATCH TO REVEAL", w / 2, h / 2);
+    ctx.fillText("SCRATCH TO REVEAL", w / 2, h / 2 - 8);
+    ctx.font = '500 11px Montserrat, sans-serif';
+    ctx.fillText("Reception & Wedding", w / 2, h / 2 + 14);
   }
 
   let scratching = false;

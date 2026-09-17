@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <div class="petals" id="petals"></div>
 
@@ -24,8 +23,8 @@
         <div class="envelope" id="envelope">
           <div class="back"></div>
           <div class="letter-preview">
-            <div class="monogram">A ♥ S</div>
-            <p>With love</p>
+            <div class="monogram">A &amp; S</div>
+            <p>Open with love</p>
           </div>
           <div class="front-left"></div>
           <div class="front-right"></div>
@@ -41,39 +40,33 @@
     <section class="invitation hidden" id="invitation">
       <div class="ornament">✦</div>
       <p class="eyebrow">TOGETHER WITH OUR FAMILIES</p>
-      <h2 class="script-title">We are getting married</h2>
+      <h2 class="script-title names-title">Arunodhayan</h2>
+      <p class="weds-line">weds</p>
+      <h2 class="script-title names-title second-name">Sushmitha</h2>
 
       <p class="lead">
-        With joyful hearts, we invite you to celebrate the beginning of our forever.
+        joyfully invite you to celebrate the beginning of our forever.
       </p>
 
       <div class="scratch-section">
-        <p class="scratch-label">Scratch below to reveal the wedding date</p>
+        <p class="scratch-label">Scratch below to reveal the reception and wedding dates</p>
         <div class="scratch-card" id="scratchCard">
-          <div class="date-reveal">
-            <span class="small">WEDDING</span>
-            <strong>25 October 2026</strong>
-            <span>Sunday</span>
+          <div class="date-reveal two-events">
+            <div class="reveal-event">
+              <span class="small">RECEPTION</span>
+              <strong>24 October 2026</strong>
+              <span>Saturday</span>
+            </div>
+            <div class="reveal-divider"></div>
+            <div class="reveal-event">
+              <span class="small">WEDDING</span>
+              <strong>25 October 2026</strong>
+              <span>Sunday</span>
+            </div>
           </div>
-          <canvas id="scratchCanvas" aria-label="Scratch to reveal the wedding date"></canvas>
+          <canvas id="scratchCanvas" aria-label="Scratch to reveal the event dates"></canvas>
         </div>
         <p class="scratch-hint" id="scratchHint">Use your finger or mouse ✨</p>
-      </div>
-
-      <div class="event-grid">
-        <article class="event-card">
-          <div class="event-icon">🥂</div>
-          <p class="event-kicker">Reception</p>
-          <h3>24 October 2026</h3>
-          <p>Saturday</p>
-        </article>
-
-        <article class="event-card">
-          <div class="event-icon">💍</div>
-          <p class="event-kicker">Wedding</p>
-          <h3>25 October 2026</h3>
-          <p>Sunday</p>
-        </article>
       </div>
 
       <div class="venue-card">
