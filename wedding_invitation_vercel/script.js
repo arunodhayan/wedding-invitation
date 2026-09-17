@@ -35,7 +35,6 @@ function setupScratchCard() {
   const canvas = document.getElementById("scratchCanvas");
   const card = document.getElementById("scratchCard");
   const hint = document.getElementById("scratchHint");
-  const label = document.getElementById("scratchLabel");
   const ctx = canvas.getContext("2d", { willReadFrequently: true });
 
   function fitCanvas() {
@@ -139,7 +138,6 @@ function setupScratchCard() {
     if (ratio > 0.52) {
       canvas.style.transition = "opacity .7s ease";
       canvas.style.opacity = "0";
-      label.textContent = "Reception & Wedding";
       hint.textContent = "Save the date ♥";
       setTimeout(() => {
         canvas.style.pointerEvents = "none";
