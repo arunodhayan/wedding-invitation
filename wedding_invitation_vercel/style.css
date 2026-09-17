@@ -320,11 +320,10 @@ body::before {
 
 .scratch-label {
   margin: 0 0 14px;
-  font-size: .78rem;
+  font-size: .75rem;
   text-transform: uppercase;
   letter-spacing: .16em;
   color: #8e6a5a;
-  font-weight: 600;
 }
 
 .scratch-card {
@@ -337,10 +336,6 @@ body::before {
   border: 1px solid rgba(203,164,93,.45);
   box-shadow: 0 15px 30px rgba(94,52,54,.10);
   background: #fffaf0;
-}
-
-.static-card {
-  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,250,240,.95));
 }
 
 .date-reveal {
@@ -396,6 +391,20 @@ body::before {
   justify-self: center;
 }
 
+#scratchCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.scratch-hint {
+  margin: 10px 0 0;
+  font-size: .78rem;
+  color: #9a7c70;
+}
 
 .event-kicker {
   margin: 0 0 8px;
