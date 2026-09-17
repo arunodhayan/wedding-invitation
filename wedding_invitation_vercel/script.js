@@ -155,7 +155,7 @@ function setupScratchCard() {
 }
 
 function updateCountdown() {
-  const target = new Date("2026-10-25T00:00:00+05:30").getTime();
+  const target = new Date("2026-10-25T09:00:00+05:30").getTime();
   const now = Date.now();
   let diff = target - now;
 

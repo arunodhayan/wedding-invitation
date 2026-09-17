@@ -1,11 +1,11 @@
 # Digital Wedding Invitation
 
-This updated version includes:
-- Initials on the envelope: A & S
-- Open envelope reveals: Arunodhayan weds Sushmitha
-- Scratch card reveals both Reception and Wedding dates
-- Removed the duplicate event cards below the scratch section
+Latest version:
+- Envelope initials: A & S
+- Main reveal: Arunodhayan weds Sushmitha
+- Scratch card reveals:
+  - Reception: 24 October 2026, 6:00 PM
+  - Wedding: 25 October 2026, 9:00 AM
+- Duplicate event cards removed
 - Venue: Nature Knots
-- Countdown included
-
-Deploy on Vercel using the folder as root if it is inside a subdirectory.
+- Countdown now counts down to the wedding start time at 9:00 AM IST
