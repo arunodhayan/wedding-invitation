@@ -1,11 +1,6 @@
-# Digital Wedding Invitation
+# Wedding Invitation Reel — envelope lower, name card top
 
-Latest version:
-- Envelope initials: A & S
-- Main reveal: Arunodhayan weds Sushmitha
-- Scratch card reveals:
-  - Reception: 24 October 2026, 6:00 PM
-  - Wedding: 25 October 2026, 9:00 AM
-- Duplicate event cards removed
-- Venue: Nature Knots
-- Countdown now counts down to the wedding start time at 9:00 AM IST
+Changes in this version:
+- Envelope is kept lower on the opening background.
+- After clicking the envelope, the name square/card stays at the top.
+- Main Arunodhayan weds Sushmitha scene remains at the top.

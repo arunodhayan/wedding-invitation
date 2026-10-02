@@ -2,99 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#5d1f2f" />
-  <title>Wedding Invitation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a1412" />
+  <title>Arunodhayan Weds Sushmitha - Reel Invite</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="petals" id="petals"></div>
+  <div class="reel-shell">
+    <div class="progress" id="progress"></div>
 
-  <main class="page-shell">
-    <section class="intro" id="intro">
-      <p class="eyebrow">YOU'RE INVITED</p>
-      <h1>A Celebration of Love</h1>
-      <p class="intro-copy">A little surprise is waiting for you.</p>
-
-      <div class="envelope-wrap" id="envelopeWrap" role="button" tabindex="0" aria-label="Open wedding invitation">
-        <div class="envelope" id="envelope">
-          <div class="back"></div>
-          <div class="letter-preview">
-            <div class="monogram">A &amp; S</div>
-            <p>Open with love</p>
-          </div>
-          <div class="front-left"></div>
-          <div class="front-right"></div>
-          <div class="front-bottom"></div>
-          <div class="flap"></div>
-          <div class="wax-seal">♥</div>
-        </div>
+    <section class="scene" data-duration="6">
+      <img src="assets/main_scene.jpg" alt="Main wedding invitation art" class="bg main-bg" />
+      <div class="shade main-scene-shade"></div>
+      <div class="content center-panel glass-panel light-copy main-scene-copy">
+        <p class="eyebrow light">Wedding Invitation</p>
+        <h2>Arunodhayan</h2>
+        <p class="main-weds">weds</p>
+        <h2>Sushmitha</h2>
+        <p class="desc">With love in our hearts and joy in our souls, we invite you to be part of our beautiful beginning.</p>
       </div>
-
-      <button class="open-btn" id="openBtn">Open Invitation</button>
+    </section>
+<section class="scene" data-duration="7">
+      <img src="assets/haldi.png" alt="Haldi art" class="bg" />
+      <div class="shade haldi"></div>
+      <div class="content event-free haldi-copy">
+        <h2>Haldi</h2>
+        <p class="date">15 October 2026</p>
+        <p class="time">Thursday</p>
+        <p class="desc">A vibrant ceremony of turmeric, flowers, laughter, and family blessings as our celebrations begin.</p>
+      </div>
     </section>
 
-    <section class="invitation hidden" id="invitation">
-      <div class="ornament">✦</div>
-      <p class="eyebrow">TOGETHER WITH OUR FAMILIES</p>
-      <h2 class="script-title names-title">Arunodhayan</h2>
-      <p class="weds-line">weds</p>
-      <h2 class="script-title names-title second-name">Sushmitha</h2>
-
-      <p class="lead">
-        joyfully invite you to celebrate the beginning of our forever.
-      </p>
-
-      <div class="scratch-section">
-        <p class="scratch-label">Scratch below to reveal the reception and wedding dates</p>
-        <div class="scratch-card" id="scratchCard">
-          <div class="date-reveal two-events">
-            <div class="reveal-event">
-              <span class="small">RECEPTION</span>
-              <strong>24 October 2026</strong>
-              <span>Saturday · 6:00 PM</span>
-            </div>
-            <div class="reveal-divider"></div>
-            <div class="reveal-event">
-              <span class="small">WEDDING</span>
-              <strong>25 October 2026</strong>
-              <span>Sunday · 9:00 AM</span>
-            </div>
-          </div>
-          <canvas id="scratchCanvas" aria-label="Scratch to reveal the event dates"></canvas>
-        </div>
-        <p class="scratch-hint" id="scratchHint">Use your finger or mouse ✨</p>
+    <section class="scene" data-duration="7">
+      <img src="assets/sangeeth.jpg" alt="Sangeeth art" class="bg" />
+      <div class="shade sangeeth"></div>
+      <div class="content event-free light-copy sangeeth-copy">
+        <h2>Sangeeth</h2>
+        <p class="date">19 October 2026</p>
+        <p class="time">Monday</p>
+        <p class="desc">An evening filled with music, dance, joy, and unforgettable memories shared with family and friends.</p>
       </div>
-
-      <div class="venue-card">
-        <p class="event-kicker">Venue</p>
-        <h3>Nature Knots</h3>
-        <p class="venue-copy">Join us as we celebrate surrounded by love, laughter, and beautiful memories.</p>
-        <a
-          class="map-btn"
-          href="https://www.google.com/maps/place/NATURE+KNOTS/@13.1674464,77.4554111,149a,48y,0.22t/data=!3m1!1e3!4m6!3m5!1s0x3bae27e896b51feb:0xc811a455b02dee52!8m2!3d13.1674358!4d77.4558016!16s%2Fg%2F11t2r93t91?entry=ttu&g_ep=EgoyMDI2MDkxNC4wIKXMDSoASAFQAw%3D%3D"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Open Location
-        </a>
-      </div>
-
-      <div class="countdown" id="countdown">
-        <div><strong id="days">--</strong><span>Days</span></div>
-        <div><strong id="hours">--</strong><span>Hours</span></div>
-        <div><strong id="minutes">--</strong><span>Minutes</span></div>
-        <div><strong id="seconds">--</strong><span>Seconds</span></div>
-      </div>
-
-      <p class="closing-script">Your presence will make our day even more special.</p>
-      <p class="footer-note">Save the date · 25.10.2026</p>
     </section>
-  </main>
 
+    <section class="scene" data-duration="7">
+      <img src="assets/reception.png" alt="Reception art" class="bg" />
+      <div class="shade reception"></div>
+      <div class="content center-panel soft-panel reception-copy">
+        <h2>Reception</h2>
+        <p class="date">24 October 2026</p>
+        <p class="time">Saturday · 6:00 PM</p>
+        <p class="desc">Join us for an elegant evening of celebration, warmth, togetherness, and your cherished blessings.</p>
+      </div>
+    </section>
+
+    <section class="scene" data-duration="8">
+      <img src="assets/wedding.jpg" alt="Wedding art" class="bg" />
+      <div class="shade wedding"></div>
+      <div class="content center-panel glass-panel light-copy wedding-copy">
+        <h2>Wedding</h2>
+        <p class="date">25 October 2026</p>
+        <p class="time">Sunday · 9:00 AM</p>
+        <p class="desc">Witness our sacred union and bless us as we begin our forever with love, tradition, and happiness.</p>
+      </div>
+    </section>
+
+    <section class="scene" data-duration="9">
+      <img src="assets/opening.jpg" alt="Venue art" class="bg" />
+      <div class="shade final"></div>
+      <div class="content final-panel">
+        <p class="eyebrow">Venue</p>
+        <h2>Nature Knots</h2>
+        <p class="closing">Your presence will make our celebration even more special.</p>
+        <div class="schedule">
+          <div><span>Haldi</span><strong>15 Oct 2026</strong></div>
+          <div><span>Sangeeth</span><strong>19 Oct 2026</strong></div>
+          <div><span>Reception</span><strong>24 Oct 2026 · 6:00 PM</strong></div>
+          <div><span>Wedding</span><strong>25 Oct 2026 · 9:00 AM</strong></div>
+        </div>
+        <a class="location-btn" href="https://www.google.com/maps/place/NATURE+KNOTS/@13.1674464,77.4554111,149a,48y,0.22t/data=!3m1!1e3!4m6!3m5!1s0x3bae27e896b51feb:0xc811a455b02dee52!8m2!3d13.1674358!4d77.4558016!16s%2Fg%2F11t2r93t91?entry=ttu&g_ep=EgoyMDI2MDkxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Open Location</a>
+      </div>
+    </section>
+
+    <div class="start-overlay" id="startOverlay">
+      <div class="envelope-start" id="startBtn" role="button" tabindex="0" aria-label="Open wedding invitation">
+        <div class="envelope-back"></div>
+        <div class="envelope-letter">
+          <div class="letter-reveal">
+            <p class="envelope-small">Wedding Invitation</p>
+            <h3>Arunodhayan</h3>
+            <p class="envelope-weds">weds</p>
+            <h3>Sushmitha</h3>
+          </div>
+          <p class="envelope-click">Click to open</p>
+        </div>
+        <div class="envelope-left"></div>
+        <div class="envelope-right"></div>
+        <div class="envelope-bottom"></div>
+        <div class="envelope-flap"></div>
+        <div class="envelope-seal">A &amp; S</div>
+      </div>
+      <div class="name-reveal-card" id="nameRevealCard" aria-hidden="true">
+        <p class="name-reveal-small">Wedding Invitation</p>
+        <h2>Arunodhayan</h2>
+        <p class="name-reveal-weds">weds</p>
+        <h2>Sushmitha</h2>
+      </div>
+    </div>
+
+    <audio id="bgAudio" preload="auto">
+      <source src="assets/wedding-audio.mp3" type="audio/mpeg">
+    </audio>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
