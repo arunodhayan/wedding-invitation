@@ -1,6 +1,10 @@
-# Wedding Invitation Reel — envelope lower, name card top
+# Wedding invitation scroll story — temple bell sound update
 
-Changes in this version:
-- Envelope is kept lower on the opening background.
-- After clicking the envelope, the name square/card stays at the top.
-- Main Arunodhayan weds Sushmitha scene remains at the top.
+Updated bell sound to feel more like an Indian temple bell using a richer Web Audio chime:
+- deeper metallic resonance
+- longer ringing decay
+- softer follow-up strike
+- preserves all earlier animations and order
+
+Flow:
+Door -> Main page -> Haldi -> Sangeeth -> Reception -> Wedding -> Beegaru Oota

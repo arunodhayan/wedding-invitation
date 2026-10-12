@@ -3,119 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#1a1412" />
-  <title>Arunodhayan Weds Sushmitha - Reel Invite</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#120f16" />
+  <title>Wedding Invitation</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="reel-shell">
-    <div class="progress" id="progress"></div>
-
-    <section class="scene" data-duration="6">
-      <img src="assets/main_scene.jpg" alt="Main wedding invitation art" class="bg main-bg" />
-      <div class="shade main-scene-shade"></div>
-      <div class="content center-panel glass-panel light-copy main-scene-copy">
-        <p class="eyebrow light">Wedding Invitation</p>
-        <h2>Arunodhayan</h2>
-        <p class="main-weds">weds</p>
-        <h2>Sushmitha</h2>
-        <p class="desc">With love in our hearts and joy in our souls, we invite you to be part of our beautiful beginning.</p>
-      </div>
-    </section>
-<section class="scene" data-duration="7">
-      <img src="assets/haldi.png" alt="Haldi art" class="bg" />
-      <div class="shade haldi"></div>
-      <div class="content event-free haldi-copy">
-        <h2>Haldi</h2>
-        <p class="date">15 October 2026</p>
-        <p class="time">Thursday</p>
-        <p class="desc">A vibrant ceremony of turmeric, flowers, laughter, and family blessings as our celebrations begin.</p>
-      </div>
-    </section>
-
-    <section class="scene" data-duration="7">
-      <img src="assets/sangeeth.jpg" alt="Sangeeth art" class="bg" />
-      <div class="shade sangeeth"></div>
-      <div class="content event-free light-copy sangeeth-copy">
-        <h2>Sangeeth</h2>
-        <p class="date">19 October 2026</p>
-        <p class="time">Monday</p>
-        <p class="desc">An evening filled with music, dance, joy, and unforgettable memories shared with family and friends.</p>
-      </div>
-    </section>
-
-    <section class="scene" data-duration="7">
-      <img src="assets/reception.png" alt="Reception art" class="bg" />
-      <div class="shade reception"></div>
-      <div class="content center-panel soft-panel reception-copy">
-        <h2>Reception</h2>
-        <p class="date">24 October 2026</p>
-        <p class="time">Saturday · 6:00 PM</p>
-        <p class="desc">Join us for an elegant evening of celebration, warmth, togetherness, and your cherished blessings.</p>
-      </div>
-    </section>
-
-    <section class="scene" data-duration="8">
-      <img src="assets/wedding.jpg" alt="Wedding art" class="bg" />
-      <div class="shade wedding"></div>
-      <div class="content center-panel glass-panel light-copy wedding-copy">
-        <h2>Wedding</h2>
-        <p class="date">25 October 2026</p>
-        <p class="time">Sunday · 9:00 AM</p>
-        <p class="desc">Witness our sacred union and bless us as we begin our forever with love, tradition, and happiness.</p>
-      </div>
-    </section>
-
-    <section class="scene" data-duration="9">
-      <img src="assets/opening.jpg" alt="Venue art" class="bg" />
-      <div class="shade final"></div>
-      <div class="content final-panel">
-        <p class="eyebrow">Venue</p>
-        <h2>Nature Knots</h2>
-        <p class="closing">Your presence will make our celebration even more special.</p>
-        <div class="schedule">
-          <div><span>Haldi</span><strong>15 Oct 2026</strong></div>
-          <div><span>Sangeeth</span><strong>19 Oct 2026</strong></div>
-          <div><span>Reception</span><strong>24 Oct 2026 · 6:00 PM</strong></div>
-          <div><span>Wedding</span><strong>25 Oct 2026 · 9:00 AM</strong></div>
-        </div>
-        <a class="location-btn" href="https://www.google.com/maps/place/NATURE+KNOTS/@13.1674464,77.4554111,149a,48y,0.22t/data=!3m1!1e3!4m6!3m5!1s0x3bae27e896b51feb:0xc811a455b02dee52!8m2!3d13.1674358!4d77.4558016!16s%2Fg%2F11t2r93t91?entry=ttu&g_ep=EgoyMDI2MDkxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Open Location</a>
-      </div>
-    </section>
-
-    <div class="start-overlay" id="startOverlay">
-      <div class="envelope-start" id="startBtn" role="button" tabindex="0" aria-label="Open wedding invitation">
-        <div class="envelope-back"></div>
-        <div class="envelope-letter">
-          <div class="letter-reveal">
-            <p class="envelope-small">Wedding Invitation</p>
-            <h3>Arunodhayan</h3>
-            <p class="envelope-weds">weds</p>
-            <h3>Sushmitha</h3>
-          </div>
-          <p class="envelope-click">Click to open</p>
-        </div>
-        <div class="envelope-left"></div>
-        <div class="envelope-right"></div>
-        <div class="envelope-bottom"></div>
-        <div class="envelope-flap"></div>
-        <div class="envelope-seal">A &amp; S</div>
-      </div>
-      <div class="name-reveal-card" id="nameRevealCard" aria-hidden="true">
-        <p class="name-reveal-small">Wedding Invitation</p>
-        <h2>Arunodhayan</h2>
-        <p class="name-reveal-weds">weds</p>
-        <h2>Sushmitha</h2>
-      </div>
-    </div>
-
-    <audio id="bgAudio" preload="auto">
-      <source src="assets/wedding-audio.mp3" type="audio/mpeg">
-    </audio>
+  <div class="door-overlay" id="doorOverlay" aria-label="Open invitation">
+    <div class="door-flowers" aria-hidden="true"><span style="--x:3;--d:3.2s;--delay:0.0s;--r:-20deg;--s:0.8"></span><span style="--x:8;--d:3.5500000000000003s;--delay:0.08s;--r:-7deg;--s:0.92"></span><span style="--x:13;--d:3.9000000000000004s;--delay:0.16s;--r:6deg;--s:1.04"></span><span style="--x:18;--d:4.25s;--delay:0.24s;--r:19deg;--s:1.1600000000000001"></span><span style="--x:23;--d:4.6s;--delay:0.32s;--r:-8deg;--s:0.8"></span><span style="--x:28;--d:4.95s;--delay:0.4s;--r:5deg;--s:0.92"></span><span style="--x:33;--d:5.3s;--delay:0.48s;--r:18deg;--s:1.04"></span><span style="--x:38;--d:3.2s;--delay:0.56s;--r:-9deg;--s:1.1600000000000001"></span><span style="--x:43;--d:3.5500000000000003s;--delay:0.64s;--r:4deg;--s:0.8"></span><span style="--x:48;--d:3.9000000000000004s;--delay:0.0s;--r:17deg;--s:0.92"></span><span style="--x:53;--d:4.25s;--delay:0.08s;--r:-10deg;--s:1.04"></span><span style="--x:58;--d:4.6s;--delay:0.16s;--r:3deg;--s:1.1600000000000001"></span><span style="--x:63;--d:4.95s;--delay:0.24s;--r:16deg;--s:0.8"></span><span style="--x:68;--d:5.3s;--delay:0.32s;--r:-11deg;--s:0.92"></span><span style="--x:73;--d:3.2s;--delay:0.4s;--r:2deg;--s:1.04"></span><span style="--x:78;--d:3.5500000000000003s;--delay:0.48s;--r:15deg;--s:1.1600000000000001"></span><span style="--x:83;--d:3.9000000000000004s;--delay:0.56s;--r:-12deg;--s:0.8"></span><span style="--x:88;--d:4.25s;--delay:0.64s;--r:1deg;--s:0.92"></span><span style="--x:93;--d:4.6s;--delay:0.0s;--r:14deg;--s:1.04"></span><span style="--x:4;--d:4.95s;--delay:0.08s;--r:-13deg;--s:1.1600000000000001"></span><span style="--x:9;--d:5.3s;--delay:0.16s;--r:0deg;--s:0.8"></span><span style="--x:14;--d:3.2s;--delay:0.24s;--r:13deg;--s:0.92"></span><span style="--x:19;--d:3.5500000000000003s;--delay:0.32s;--r:-14deg;--s:1.04"></span><span style="--x:24;--d:3.9000000000000004s;--delay:0.4s;--r:-1deg;--s:1.1600000000000001"></span><span style="--x:29;--d:4.25s;--delay:0.48s;--r:12deg;--s:0.8"></span><span style="--x:34;--d:4.6s;--delay:0.56s;--r:-15deg;--s:0.92"></span><span style="--x:39;--d:4.95s;--delay:0.64s;--r:-2deg;--s:1.04"></span><span style="--x:44;--d:5.3s;--delay:0.0s;--r:11deg;--s:1.1600000000000001"></span><span style="--x:49;--d:3.2s;--delay:0.08s;--r:-16deg;--s:0.8"></span><span style="--x:54;--d:3.5500000000000003s;--delay:0.16s;--r:-3deg;--s:0.92"></span><span style="--x:59;--d:3.9000000000000004s;--delay:0.24s;--r:10deg;--s:1.04"></span><span style="--x:64;--d:4.25s;--delay:0.32s;--r:-17deg;--s:1.1600000000000001"></span><span style="--x:69;--d:4.6s;--delay:0.4s;--r:-4deg;--s:0.8"></span><span style="--x:74;--d:4.95s;--delay:0.48s;--r:9deg;--s:0.92"></span><span style="--x:79;--d:5.3s;--delay:0.56s;--r:-18deg;--s:1.04"></span><span style="--x:84;--d:3.2s;--delay:0.64s;--r:-5deg;--s:1.1600000000000001"></span><span style="--x:89;--d:3.5500000000000003s;--delay:0.0s;--r:8deg;--s:0.8"></span><span style="--x:94;--d:3.9000000000000004s;--delay:0.08s;--r:-19deg;--s:0.92"></span><span style="--x:5;--d:4.25s;--delay:0.16s;--r:-6deg;--s:1.04"></span><span style="--x:10;--d:4.6s;--delay:0.24s;--r:7deg;--s:1.1600000000000001"></span><span style="--x:15;--d:4.95s;--delay:0.32s;--r:-20deg;--s:0.8"></span><span style="--x:20;--d:5.3s;--delay:0.4s;--r:-7deg;--s:0.92"></span></div>
+    <div class="door-panel left"></div>
+    <div class="door-panel right"></div>
   </div>
+
+  <div class="scroll-tip" id="scrollTip">Swipe up</div>
+
+  <main class="story" id="story">
+    <section class="scene" id="main-scene">
+      <img src="assets/main.jpg" alt="Main invitation" class="bg" />
+    </section>
+
+    <section class="scene" id="haldi">
+      <img src="assets/haldi.jpg" alt="Haldi invitation" class="bg" />
+      <div class="petals haldi-petals" aria-hidden="true"><span style="--x:0;--d:4.2s;--delay:0.0s;--r:-25deg;--s:0.85"></span><span style="--x:6;--d:4.8s;--delay:0.35s;--r:-14deg;--s:1.0"></span><span style="--x:12;--d:5.4s;--delay:0.7s;--r:-3deg;--s:1.15"></span><span style="--x:18;--d:6.0s;--delay:1.0499999999999998s;--r:8deg;--s:0.85"></span><span style="--x:24;--d:6.6s;--delay:1.4s;--r:19deg;--s:1.0"></span><span style="--x:30;--d:7.2s;--delay:1.75s;--r:-20deg;--s:1.15"></span><span style="--x:36;--d:4.2s;--delay:2.0999999999999996s;--r:-9deg;--s:0.85"></span><span style="--x:42;--d:4.8s;--delay:2.4499999999999997s;--r:2deg;--s:1.0"></span><span style="--x:48;--d:5.4s;--delay:0.0s;--r:13deg;--s:1.15"></span><span style="--x:54;--d:6.0s;--delay:0.35s;--r:24deg;--s:0.85"></span><span style="--x:60;--d:6.6s;--delay:0.7s;--r:-15deg;--s:1.0"></span><span style="--x:66;--d:7.2s;--delay:1.0499999999999998s;--r:-4deg;--s:1.15"></span><span style="--x:72;--d:4.2s;--delay:1.4s;--r:7deg;--s:0.85"></span><span style="--x:78;--d:4.8s;--delay:1.75s;--r:18deg;--s:1.0"></span><span style="--x:84;--d:5.4s;--delay:2.0999999999999996s;--r:-21deg;--s:1.15"></span><span style="--x:90;--d:6.0s;--delay:2.4499999999999997s;--r:-10deg;--s:0.85"></span><span style="--x:96;--d:6.6s;--delay:0.0s;--r:1deg;--s:1.0"></span><span style="--x:2;--d:7.2s;--delay:0.35s;--r:12deg;--s:1.15"></span><span style="--x:8;--d:4.2s;--delay:0.7s;--r:23deg;--s:0.85"></span><span style="--x:14;--d:4.8s;--delay:1.0499999999999998s;--r:-16deg;--s:1.0"></span><span style="--x:20;--d:5.4s;--delay:1.4s;--r:-5deg;--s:1.15"></span><span style="--x:26;--d:6.0s;--delay:1.75s;--r:6deg;--s:0.85"></span><span style="--x:32;--d:6.6s;--delay:2.0999999999999996s;--r:17deg;--s:1.0"></span><span style="--x:38;--d:7.2s;--delay:2.4499999999999997s;--r:-22deg;--s:1.15"></span></div>
+    </section>
+
+    <section class="scene location-scene" id="sangeeth" data-link="https://share.google/AhD9SVv1Bw9mAEw5Q">
+      <img src="assets/sangeeth.jpg" alt="Sangeeth invitation" class="bg" />
+      <div class="fairy-lights" aria-hidden="true"><span style="left:5%;animation-delay:0.0s"></span><span style="left:14%;animation-delay:0.18s"></span><span style="left:23%;animation-delay:0.36s"></span><span style="left:32%;animation-delay:0.54s"></span><span style="left:41%;animation-delay:0.72s"></span><span style="left:50%;animation-delay:0.8999999999999999s"></span><span style="left:59%;animation-delay:1.08s"></span><span style="left:68%;animation-delay:1.26s"></span><span style="left:77%;animation-delay:1.44s"></span><span style="left:86%;animation-delay:1.6199999999999999s"></span></div>
+      <div class="music-notes" aria-hidden="true"><span style="left:8%;top:18%;animation-delay:0.0s">♪</span><span style="left:19%;top:29%;animation-delay:0.3s">♫</span><span style="left:30%;top:40%;animation-delay:0.6s">♬</span><span style="left:41%;top:51%;animation-delay:0.8999999999999999s">♪</span><span style="left:52%;top:62%;animation-delay:1.2s">♫</span><span style="left:63%;top:18%;animation-delay:1.5s">♬</span><span style="left:74%;top:29%;animation-delay:1.7999999999999998s">♪</span><span style="left:85%;top:40%;animation-delay:2.1s">♫</span><span style="left:12%;top:51%;animation-delay:0.0s">♬</span><span style="left:23%;top:62%;animation-delay:0.3s">♪</span><span style="left:34%;top:18%;animation-delay:0.6s">♫</span><span style="left:45%;top:29%;animation-delay:0.8999999999999999s">♬</span></div>
+      <a class="map-hotspot" href="https://share.google/AhD9SVv1Bw9mAEw5Q" target="_blank" rel="noopener" aria-label="Open Sangeeth location"></a>
+    </section>
+
+    <section class="scene location-scene" id="reception" data-link="https://maps.app.goo.gl/7RafZ6vhFmiamHB5A">
+      <img src="assets/reception.jpg" alt="Reception invitation" class="bg" />
+      <div class="sparkles" aria-hidden="true"><span style="--sx:0;--sy:12;animation-delay:0.0s"></span><span style="--sx:19;--sy:20;animation-delay:0.35s"></span><span style="--sx:38;--sy:28;animation-delay:0.7s"></span><span style="--sx:57;--sy:36;animation-delay:1.0499999999999998s"></span><span style="--sx:76;--sy:44;animation-delay:1.4s"></span><span style="--sx:95;--sy:52;animation-delay:0.0s"></span><span style="--sx:14;--sy:60;animation-delay:0.35s"></span><span style="--sx:33;--sy:68;animation-delay:0.7s"></span><span style="--sx:52;--sy:76;animation-delay:1.0499999999999998s"></span><span style="--sx:71;--sy:12;animation-delay:1.4s"></span></div>
+      <a class="map-hotspot" href="https://maps.app.goo.gl/7RafZ6vhFmiamHB5A" target="_blank" rel="noopener" aria-label="Open Reception location"></a>
+    </section>
+
+    <section class="scene location-scene" id="wedding" data-link="https://maps.app.goo.gl/7RafZ6vhFmiamHB5A">
+      <img src="assets/wedding.png" alt="Wedding invitation" class="bg contain-top" />
+      <div class="garland-sparkle" aria-hidden="true"><span style="left:8%;animation-delay:0.0s"></span><span style="left:16%;animation-delay:0.45s"></span><span style="left:24%;animation-delay:0.9s"></span><span style="left:32%;animation-delay:1.35s"></span><span style="left:40%;animation-delay:1.8s"></span><span style="left:48%;animation-delay:0.0s"></span><span style="left:56%;animation-delay:0.45s"></span><span style="left:64%;animation-delay:0.9s"></span><span style="left:72%;animation-delay:1.35s"></span><span style="left:80%;animation-delay:1.8s"></span></div>
+      <div class="wedding-flowers" aria-hidden="true"><span class="white" style="--x:0;--d:4.8s;--delay:0.0s;--r:-24deg;--s:0.9"></span><span class="yellow" style="--x:7;--d:5.35s;--delay:0.28s;--r:-15deg;--s:1.02"></span><span class="white" style="--x:14;--d:5.9s;--delay:0.56s;--r:-6deg;--s:1.1400000000000001"></span><span class="yellow" style="--x:21;--d:6.45s;--delay:0.8400000000000001s;--r:3deg;--s:1.26"></span><span class="white" style="--x:28;--d:7.0s;--delay:1.12s;--r:12deg;--s:0.9"></span><span class="yellow" style="--x:35;--d:4.8s;--delay:1.4000000000000001s;--r:21deg;--s:1.02"></span><span class="white" style="--x:42;--d:5.35s;--delay:1.6800000000000002s;--r:-18deg;--s:1.1400000000000001"></span><span class="yellow" style="--x:49;--d:5.9s;--delay:0.0s;--r:-9deg;--s:1.26"></span><span class="white" style="--x:56;--d:6.45s;--delay:0.28s;--r:0deg;--s:0.9"></span><span class="yellow" style="--x:63;--d:7.0s;--delay:0.56s;--r:9deg;--s:1.02"></span><span class="white" style="--x:70;--d:4.8s;--delay:0.8400000000000001s;--r:18deg;--s:1.1400000000000001"></span><span class="yellow" style="--x:77;--d:5.35s;--delay:1.12s;--r:-21deg;--s:1.26"></span><span class="white" style="--x:84;--d:5.9s;--delay:1.4000000000000001s;--r:-12deg;--s:0.9"></span><span class="yellow" style="--x:91;--d:6.45s;--delay:1.6800000000000002s;--r:-3deg;--s:1.02"></span><span class="white" style="--x:98;--d:7.0s;--delay:0.0s;--r:6deg;--s:1.1400000000000001"></span><span class="yellow" style="--x:5;--d:4.8s;--delay:0.28s;--r:15deg;--s:1.26"></span><span class="white" style="--x:12;--d:5.35s;--delay:0.56s;--r:-24deg;--s:0.9"></span><span class="yellow" style="--x:19;--d:5.9s;--delay:0.8400000000000001s;--r:-15deg;--s:1.02"></span><span class="white" style="--x:26;--d:6.45s;--delay:1.12s;--r:-6deg;--s:1.1400000000000001"></span><span class="yellow" style="--x:33;--d:7.0s;--delay:1.4000000000000001s;--r:3deg;--s:1.26"></span><span class="white" style="--x:40;--d:4.8s;--delay:1.6800000000000002s;--r:12deg;--s:0.9"></span><span class="yellow" style="--x:47;--d:5.35s;--delay:0.0s;--r:21deg;--s:1.02"></span><span class="white" style="--x:54;--d:5.9s;--delay:0.28s;--r:-18deg;--s:1.1400000000000001"></span><span class="yellow" style="--x:61;--d:6.45s;--delay:0.56s;--r:-9deg;--s:1.26"></span><span class="white" style="--x:68;--d:7.0s;--delay:0.8400000000000001s;--r:0deg;--s:0.9"></span><span class="yellow" style="--x:75;--d:4.8s;--delay:1.12s;--r:9deg;--s:1.02"></span></div>
+      <a class="map-hotspot" href="https://maps.app.goo.gl/7RafZ6vhFmiamHB5A" target="_blank" rel="noopener" aria-label="Open Wedding location"></a>
+    </section>
+
+    
+
+<section class="scene" id="dining">
+      <img src="assets/beegaru.png" alt="Beegaru Oota invitation" class="bg contain-top" />
+      <div class="dining-lights" aria-hidden="true"><span style="left:8%"></span><span style="left:19%"></span><span style="left:30%"></span><span style="left:41%"></span><span style="left:52%"></span><span style="left:63%"></span><span style="left:74%"></span><span style="left:85%"></span></div>
+    </section>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>
