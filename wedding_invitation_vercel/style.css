@@ -1415,3 +1415,363 @@ body{
   display:none !important;
   animation:none !important;
 }
+
+
+
+/* v41: centered full door image + same-size invitation pages */
+:root{
+  --invite-width: min(520px, calc(100vw - 16px));
+  --invite-ratio: 9 / 16;
+}
+
+body{
+  background:#17131b !important;
+}
+
+.story{
+  width:100%;
+  max-width:none;
+  padding:14px 0 22px;
+  box-shadow:none !important;
+}
+
+.scene{
+  width:var(--invite-width) !important;
+  aspect-ratio:var(--invite-ratio) !important;
+  min-height:auto !important;
+  height:auto !important;
+  margin:0 auto 18px !important;
+  border-radius:24px !important;
+  overflow:hidden !important;
+  background:#120f16 !important;
+  box-shadow:0 14px 36px rgba(0,0,0,.22) !important;
+  isolation:isolate;
+}
+
+.scene .bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain !important;
+  object-position:center center !important;
+  background:#120f16;
+  border-radius:24px;
+}
+
+#main-scene .bg{
+  object-fit:contain !important;
+}
+
+@media(max-width:480px){
+  .scene{
+    width:calc(100vw - 12px) !important;
+    margin:0 auto 14px !important;
+    border-radius:18px !important;
+  }
+  .scene .bg{border-radius:18px;}
+}
+
+.door-overlay{
+  position:fixed !important;
+  inset:0 !important;
+  width:100% !important;
+  transform:none !important;
+  left:0 !important;
+  top:0 !important;
+  background:rgba(10,8,14,.62) !important;
+  display:block;
+  cursor:pointer;
+  overflow:hidden;
+  --doorW: min(520px, calc(100vw - 16px), calc((100svh - 16px) * 9 / 16));
+  --doorH: calc(var(--doorW) * 16 / 9);
+}
+
+.door-overlay::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:var(--doorW);
+  height:var(--doorH);
+  transform:translate(-50%, -50%);
+  background:#120f16 url('assets/door.jpg') center / contain no-repeat;
+  border-radius:24px;
+  box-shadow:0 16px 42px rgba(0,0,0,.34);
+}
+
+.door-panel{
+  top:50% !important;
+  bottom:auto !important;
+  width:calc(var(--doorW) / 2) !important;
+  height:var(--doorH) !important;
+  background-size:var(--doorW) var(--doorH) !important;
+  background-repeat:no-repeat !important;
+  transform:translateY(-50%);
+  box-shadow:0 0 0 1px rgba(255,255,255,.05) inset;
+}
+.door-panel.left{
+  left:calc(50% - var(--doorW) / 2) !important;
+  background-position:left center !important;
+  transform-origin:left center !important;
+  border-radius:24px 0 0 24px;
+}
+.door-panel.right{
+  left:50% !important;
+  right:auto !important;
+  background-position:right center !important;
+  transform-origin:right center !important;
+  border-radius:0 24px 24px 0;
+}
+.door-overlay.open .door-panel.left{
+  transform:translate(-105%, -50%) rotateY(68deg) !important;
+  transition:transform 1.3s ease;
+}
+.door-overlay.open .door-panel.right{
+  transform:translate(105%, -50%) rotateY(-68deg) !important;
+  transition:transform 1.3s ease;
+}
+
+.door-flowers{
+  z-index:3 !important;
+}
+.door-flowers span{
+  top:calc(50% - var(--doorH) / 2 - 20px) !important;
+}
+
+.open-invite-btn{
+  left:50% !important;
+  top:50% !important;
+  bottom:auto !important;
+  transform:translate(-50%, -50%) !important;
+  z-index:9 !important;
+}
+.open-invite-btn:active{
+  transform:translate(-50%, -50%) scale(.98) !important;
+}
+
+.door-overlay::after{
+  left:50% !important;
+  top:50% !important;
+  width:var(--doorW) !important;
+  height:var(--doorH) !important;
+  transform:translate(-50%, -50%) !important;
+  inset:auto !important;
+  border-radius:18px !important;
+}
+
+@media(max-width:480px){
+  .door-overlay{
+    --doorW: min(calc(100vw - 12px), calc((100svh - 12px) * 9 / 16));
+  }
+  .door-overlay::before{border-radius:18px;}
+  .door-panel.left{border-radius:18px 0 0 18px;}
+  .door-panel.right{border-radius:0 18px 18px 0;}
+  .open-invite-btn{font-size:.74rem; padding:13px 22px;}
+}
+
+
+/* v42: restore previous door opening layout */
+.door-overlay{
+  position:fixed !important;
+  inset:0 !important;
+  z-index:50 !important;
+  overflow:hidden !important;
+  perspective:1500px !important;
+  background:transparent !important;
+  cursor:pointer !important;
+  width:auto !important;
+  height:auto !important;
+  left:0 !important;
+  top:0 !important;
+  transform:none !important;
+  display:block !important;
+}
+.door-overlay::before{content:none !important;display:none !important;}
+.door-panel{
+  position:absolute !important;
+  top:0 !important;
+  bottom:0 !important;
+  width:50.2% !important;
+  height:auto !important;
+  background-image:url('assets/door.jpg') !important;
+  background-size:200% 100% !important;
+  background-repeat:no-repeat !important;
+  transform:none !important;
+  border-radius:0 !important;
+}
+.door-panel.left{left:0 !important;right:auto !important;background-position:left center !important;transform-origin:left center !important;}
+.door-panel.right{right:0 !important;left:auto !important;background-position:right center !important;transform-origin:right center !important;}
+.door-overlay.open .door-panel.left{transform:translateX(-105%) rotateY(68deg) !important;transition:transform 1.3s ease !important;}
+.door-overlay.open .door-panel.right{transform:translateX(105%) rotateY(-68deg) !important;transition:transform 1.3s ease !important;}
+.door-flowers span{top:-12% !important;}
+.open-invite-btn{left:50% !important;top:auto !important;bottom:8% !important;transform:translateX(-50%) !important;}
+.open-invite-btn:active{transform:translateX(-50%) scale(.98) !important;}
+.door-overlay::after{left:auto !important;top:auto !important;width:auto !important;height:auto !important;transform:none !important;inset:10px !important;border-radius:18px !important;}
+@media(min-width:700px){.door-overlay{left:50% !important;width:min(520px,100vw) !important;transform:translateX(-50%) !important;}}
+@media(max-width:480px){.open-invite-btn{bottom:7% !important;font-size:.74rem !important;padding:13px 22px !important;}}
+
+/* v42: move flickering top lights from Sangeeth to Reception */
+#sangeeth .fairy-lights{display:none !important;}
+#reception .sparkles{display:none !important;}
+#reception .reception-fairy-lights{display:block !important;position:absolute !important;inset:0 !important;z-index:2 !important;pointer-events:none !important;}
+
+
+/* v43: remove black letterbox areas while keeping equal-size cards and zero crop */
+.scene{
+  position:relative !important;
+  background:#efe4d6 !important;
+}
+
+/* soft blurred copy of each invite fills unused space behind contained image */
+.scene::before{
+  content:"" !important;
+  display:block !important;
+  position:absolute !important;
+  inset:-22px !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+  background-image:var(--scene-bg) !important;
+  background-size:cover !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+  filter:blur(18px) brightness(.68) saturate(.9) !important;
+  transform:scale(1.08) !important;
+  opacity:.62 !important;
+}
+
+.scene > img.bg{
+  z-index:1 !important;
+  background:transparent !important;
+}
+
+#main-scene{--scene-bg:url('assets/main.jpg');}
+#haldi{--scene-bg:url('assets/haldi.jpg');}
+#sangeeth{--scene-bg:url('assets/sangeeth.jpg');}
+#reception{--scene-bg:url('assets/reception.jpg');}
+#wedding{--scene-bg:url('assets/wedding-final.png');}
+#dining{--scene-bg:url('assets/beegaru.png');}
+
+/* keep animations/links above both layers */
+.scene > .petals,
+.scene > .haldi-petals,
+.scene > .fairy-lights,
+.scene > .music-notes,
+.scene > .sparkles,
+.scene > .garland-sparkle,
+.scene > .wedding-flowers,
+.scene > .dining-lights,
+.scene > .venue-hotspot,
+.scene > .map-hotspot{
+  z-index:3 !important;
+}
+
+
+/* v44: remove blurred background fill completely */
+.scene{
+  background:#f5eee5 !important;
+}
+
+/* disable the blurred duplicate-image layer added in v43 */
+.scene::before{
+  content:none !important;
+  display:none !important;
+  background-image:none !important;
+  filter:none !important;
+  opacity:0 !important;
+}
+
+/* keep actual invite image sharp */
+.scene > img.bg{
+  z-index:1 !important;
+  background:#f5eee5 !important;
+  filter:none !important;
+  opacity:1 !important;
+}
+
+
+/* v45: remove unused empty space by making all invite images fill the same card size */
+.scene{
+  aspect-ratio: 9 / 16 !important;
+  background:#120f16 !important;
+}
+
+.scene > img.bg,
+.scene > img.bg.contain-top,
+.scene .bg,
+#main-scene .bg,
+#dining > img.bg.contain-top,
+#wedding > img.bg.contain-top{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  background:transparent !important;
+}
+
+/* Per-page positioning so important text stays visible */
+#main-scene > img.bg{ object-position:center top !important; }
+#haldi > img.bg{ object-position:center top !important; }
+#sangeeth > img.bg{ object-position:center top !important; }
+#reception > img.bg{ object-position:center top !important; }
+#wedding > img.bg{ object-position:center center !important; }
+#dining > img.bg{ object-position:center center !important; }
+
+/* Keep overlays above the images */
+.scene > .petals,
+.scene > .haldi-petals,
+.scene > .fairy-lights,
+.scene > .music-notes,
+.scene > .sparkles,
+.scene > .garland-sparkle,
+.scene > .wedding-flowers,
+.scene > .dining-lights,
+.scene > .venue-hotspot,
+.scene > .map-hotspot{
+  z-index:3 !important;
+}
+
+
+/* v46: specifically fix remaining empty bottom space on main invite and reception */
+#main-scene,
+#reception{
+  background:#120f16 !important;
+}
+
+#main-scene > img.bg,
+#main-scene .bg,
+#reception > img.bg,
+#reception .bg{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  max-height:none !important;
+  display:block !important;
+  object-fit:cover !important;
+  object-position:center top !important;
+  background:transparent !important;
+}
+
+/* keep other pages unchanged; only ensure these two fill the full card */
+
+
+/* v47: center the Open Invitation button on the door */
+.open-invite-btn{
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  bottom:auto !important;
+  transform:translate(-50%, -50%) !important;
+  z-index:9 !important;
+}
+.open-invite-btn:active{
+  transform:translate(-50%, -50%) scale(.98) !important;
+}
+@media(max-width:480px){
+  .open-invite-btn{
+    top:50% !important;
+    bottom:auto !important;
+    transform:translate(-50%, -50%) !important;
+  }
+}

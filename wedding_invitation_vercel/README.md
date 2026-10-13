@@ -1,5 +1,4 @@
-# Wedding Invitation — Flicker Removed
+# Wedding Invitation — v48 updated wedding image
 
-This version removes the animated diya flicker from the Wedding page.
-
-Everything else remains unchanged.
+Updated the Wedding section to use the latest generated wedding invitation image.
+All other layout, animations, links, page order, and Open Invitation behavior remain unchanged.
