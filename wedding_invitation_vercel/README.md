@@ -1,10 +1,5 @@
-# Wedding invitation scroll story — temple bell sound update
+# Wedding Invitation — diya lamps moved to bottom
 
-Updated bell sound to feel more like an Indian temple bell using a richer Web Audio chime:
-- deeper metallic resonance
-- longer ringing decay
-- softer follow-up strike
-- preserves all earlier animations and order
-
-Flow:
-Door -> Main page -> Haldi -> Sangeeth -> Reception -> Wedding -> Beegaru Oota
+Updated as requested:
+- The diya lamps on the Wedding page are now positioned at the bottom.
+- All other styling, borders, animations, and page order remain unchanged.

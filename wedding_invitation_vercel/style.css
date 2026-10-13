@@ -102,3 +102,339 @@
   height:24px;
   transform:rotate(var(--r,12deg)) scale(var(--s,1));
 }
+
+
+/* Elegant border added while keeping previous version unchanged */
+.scene::after{
+  content:"";
+  position:absolute;
+  inset:12px;
+  z-index:4;
+  pointer-events:none;
+  border:2px solid rgba(214,170,88,.88);
+  border-radius:18px;
+  box-shadow:
+    inset 0 0 0 5px rgba(255,248,225,.20),
+    inset 0 0 0 7px rgba(214,170,88,.20);
+}
+.scene::before{
+  content:"✦";
+  position:absolute;
+  z-index:5;
+  pointer-events:none;
+  left:50%;
+  top:17px;
+  transform:translateX(-50%);
+  color:rgba(214,170,88,.95);
+  font-size:18px;
+  text-shadow:0 0 8px rgba(255,234,177,.35);
+}
+.door-overlay::after{
+  content:"";
+  position:absolute;
+  inset:12px;
+  z-index:8;
+  pointer-events:none;
+  border:2px solid rgba(214,170,88,.88);
+  border-radius:18px;
+  box-shadow:inset 0 0 0 5px rgba(255,248,225,.18);
+}
+@media(max-width:480px){
+  .scene::after,.door-overlay::after{inset:8px;border-radius:14px;}
+  .scene::before{top:12px;font-size:15px;}
+}
+
+
+/* v15: stronger separation between each invitation page */
+body{
+  background:#1b171d !important;
+}
+.story{
+  width:100%;
+  padding:14px 0 22px;
+}
+.scene{
+  width:min(520px, calc(100vw - 18px));
+  margin:0 auto 18px;
+  min-height:100svh;
+  border-radius:24px;
+  overflow:hidden;
+  background:#120f16;
+  box-shadow:0 14px 36px rgba(0,0,0,.22);
+  isolation:isolate;
+}
+.scene:last-child{
+  margin-bottom:8px;
+}
+.scene::after{
+  inset:10px !important;
+  border:2px solid rgba(214,170,88,.92) !important;
+  border-radius:18px !important;
+  box-shadow:
+    inset 0 0 0 3px rgba(255,248,225,.12),
+    inset 0 0 0 6px rgba(214,170,88,.18),
+    0 0 0 1px rgba(255,255,255,.04);
+}
+.scene::before{
+  top:14px !important;
+}
+.bg{
+  border-radius:24px;
+}
+.door-overlay{
+  background:rgba(10,8,14,.35) !important;
+}
+.open-invite-btn{
+  position:absolute;
+  left:50%;
+  bottom:8%;
+  transform:translateX(-50%);
+  z-index:9;
+  border:0;
+  border-radius:999px;
+  padding:14px 26px;
+  min-height:48px;
+  background:linear-gradient(180deg, #fff7ea 0%, #efd8a8 100%);
+  color:#704b1f;
+  font:700 0.8rem/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  box-shadow:0 10px 22px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.65);
+  cursor:pointer;
+}
+.open-invite-btn:active{
+  transform:translateX(-50%) scale(.98);
+}
+.door-overlay.open .open-invite-btn{
+  opacity:0;
+  transition:opacity .22s ease;
+}
+.door-overlay::after{
+  inset:10px !important;
+  border-radius:18px !important;
+}
+.scroll-tip{
+  bottom:max(14px, env(safe-area-inset-bottom));
+}
+@media(max-width:480px){
+  .scene{width:calc(100vw - 12px); margin-bottom:14px; border-radius:18px;}
+  .scene::after,.door-overlay::after{inset:7px !important; border-radius:13px !important;}
+  .open-invite-btn{bottom:7%; font-size:.74rem; padding:13px 22px;}
+}
+@media(min-width:700px){
+  body{display:block !important; background:#18151d !important;}
+  .story{width:100%; max-width:none; box-shadow:none !important;}
+  .scene{width:min(520px, 100vw - 18px);} 
+  .door-overlay{left:50%; width:min(520px, 100vw); transform:translateX(-50%);} 
+}
+
+
+/* v17: subtle diya flame flicker on the Wedding invitation */
+.diya-flickers{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+}
+
+.diya-flame{
+  position:absolute;
+  width:12px;
+  height:22px;
+  border-radius:60% 60% 55% 55%;
+  transform-origin:50% 100%;
+  background:
+    radial-gradient(ellipse at 50% 72%, #fffbd4 0 20%, transparent 21%),
+    radial-gradient(ellipse at 50% 58%, #ffd95a 0 42%, transparent 43%),
+    linear-gradient(180deg, #fff6a6 0%, #ffb21e 62%, #ff6a00 100%);
+  filter:
+    drop-shadow(0 0 5px rgba(255,217,90,.95))
+    drop-shadow(0 0 11px rgba(255,145,20,.70))
+    drop-shadow(0 0 18px rgba(255,110,0,.38));
+  opacity:.88;
+  animation:diyaFlicker 1.15s ease-in-out infinite alternate;
+}
+
+/* Approximate positions matching the hanging diyas in the supplied Wedding artwork */
+.flame-1{left:13.4%; top:21.2%; animation-delay:0s;}
+.flame-2{left:13.8%; top:48.7%; animation-delay:.27s;}
+.flame-3{right:13.2%; top:21.5%; animation-delay:.48s;}
+.flame-4{right:13.6%; top:49.2%; animation-delay:.73s;}
+
+@keyframes diyaFlicker{
+  0%{
+    transform:rotate(-2deg) scale(.90,1.02);
+    opacity:.68;
+    filter:
+      drop-shadow(0 0 4px rgba(255,217,90,.75))
+      drop-shadow(0 0 8px rgba(255,145,20,.50));
+  }
+  24%{
+    transform:rotate(2deg) scale(1.02,.94);
+    opacity:1;
+  }
+  52%{
+    transform:rotate(-1deg) scale(.95,1.09);
+    opacity:.80;
+  }
+  76%{
+    transform:rotate(3deg) scale(1.06,.96);
+    opacity:.98;
+  }
+  100%{
+    transform:rotate(-3deg) scale(.92,1.05);
+    opacity:.74;
+    filter:
+      drop-shadow(0 0 6px rgba(255,217,90,.95))
+      drop-shadow(0 0 13px rgba(255,145,20,.72))
+      drop-shadow(0 0 20px rgba(255,110,0,.40));
+  }
+}
+
+@media(max-width:480px){
+  .diya-flame{
+    width:10px;
+    height:19px;
+  }
+}
+
+
+/* v18: full diya lamp overlay for wedding section */
+.diya-lamps{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+}
+.diya-lamp{
+  position:absolute;
+  width:34px;
+  height:54px;
+  transform:translate(-50%, -50%);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.18));
+}
+.lamp-1{left:14%; top:88%;}
+.lamp-2{left:31%; top:90%;}
+.lamp-3{left:69%; top:90%;}
+.lamp-4{left:86%; top:88%;}
+
+.diya-body,
+.diya-base,
+.diya-flame-core{
+  position:absolute;
+  display:block;
+}
+.diya-body{
+  left:50%;
+  bottom:7px;
+  width:28px;
+  height:14px;
+  transform:translateX(-50%);
+  border-radius:0 0 15px 15px / 0 0 12px 12px;
+  background:linear-gradient(180deg,#dba544 0%, #b96f19 65%, #8e4b0d 100%);
+  box-shadow: inset 0 2px 2px rgba(255,233,170,.45), inset 0 -2px 2px rgba(90,38,0,.35);
+}
+.diya-body::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:-3px;
+  width:30px;
+  height:8px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:linear-gradient(180deg,#f1c66b 0%, #b66c18 100%);
+  box-shadow: inset 0 1px 1px rgba(255,243,201,.45);
+}
+.diya-body::after{
+  content:"";
+  position:absolute;
+  right:-4px;
+  top:1px;
+  width:9px;
+  height:6px;
+  border-radius:0 80% 60% 0;
+  background:linear-gradient(180deg,#c88428 0%, #8c4d0b 100%);
+  transform:rotate(12deg);
+}
+.diya-base{
+  left:50%;
+  bottom:0;
+  width:16px;
+  height:7px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:linear-gradient(180deg,#b87923 0%, #7e4309 100%);
+}
+.diya-flame-core{
+  left:50%;
+  bottom:17px;
+  width:12px;
+  height:22px;
+  transform:translateX(-50%);
+  border-radius:60% 60% 55% 55%;
+  transform-origin:50% 100%;
+  background:
+    radial-gradient(ellipse at 50% 72%, #fffbd4 0 20%, transparent 21%),
+    radial-gradient(ellipse at 50% 58%, #ffd95a 0 42%, transparent 43%),
+    linear-gradient(180deg, #fff6a6 0%, #ffb21e 62%, #ff6a00 100%);
+  filter:
+    drop-shadow(0 0 5px rgba(255,217,90,.95))
+    drop-shadow(0 0 11px rgba(255,145,20,.70))
+    drop-shadow(0 0 18px rgba(255,110,0,.38));
+  opacity:.9;
+  animation:diyaLampFlicker 1.15s ease-in-out infinite alternate;
+}
+.diya-flame-core::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-2px;
+  width:2px;
+  height:8px;
+  transform:translateX(-50%);
+  background:#2e1d10;
+  border-radius:2px;
+  opacity:.8;
+}
+.lamp-2 .diya-flame-core{ animation-delay:.27s; }
+.lamp-3 .diya-flame-core{ animation-delay:.48s; }
+.lamp-4 .diya-flame-core{ animation-delay:.73s; }
+
+@keyframes diyaLampFlicker{
+  0%{
+    transform:translateX(-50%) rotate(-2deg) scale(.90,1.02);
+    opacity:.68;
+    filter:
+      drop-shadow(0 0 4px rgba(255,217,90,.75))
+      drop-shadow(0 0 8px rgba(255,145,20,.50));
+  }
+  24%{
+    transform:translateX(-50%) rotate(2deg) scale(1.02,.94);
+    opacity:1;
+  }
+  52%{
+    transform:translateX(-50%) rotate(-1deg) scale(.95,1.09);
+    opacity:.80;
+  }
+  76%{
+    transform:translateX(-50%) rotate(3deg) scale(1.06,.96);
+    opacity:.98;
+  }
+  100%{
+    transform:translateX(-50%) rotate(-3deg) scale(.92,1.05);
+    opacity:.74;
+    filter:
+      drop-shadow(0 0 6px rgba(255,217,90,.95))
+      drop-shadow(0 0 13px rgba(255,145,20,.72))
+      drop-shadow(0 0 20px rgba(255,110,0,.40));
+  }
+}
+
+@media(max-width:480px){
+  .diya-lamp{ width:28px; height:46px; }
+  .diya-body{ width:23px; height:12px; }
+  .diya-body::before{ width:25px; height:7px; }
+  .diya-base{ width:13px; height:6px; }
+  .diya-flame-core{ width:10px; height:19px; }
+}
