@@ -1,10 +1,11 @@
-# Wedding Invitation — v49 mobile start fix
+# Wedding Invitation — Equal Size, No Empty Space
 
-Fixes a mobile-only issue where, after opening the door, the page could resume at Haldi instead of the main invitation.
+All displayed invitation images are normalized to exactly 900×1600 (9:16).
 
-Changes:
-- Disables browser scroll restoration.
-- Forces the story to page 1 before the door opens.
-- Forces page 1 again after the door animation completes.
-- Adds extra Safari/iPhone frame-level scroll reset protection.
-- Desktop behavior and all existing animations/links remain unchanged.
+- Same size for every page
+- No unused black/cream space
+- No cropping
+- Full artwork remains visible
+- Existing animations, links, scroll gap, and centered Open Invitation button are preserved
+
+Different source images had different aspect ratios, so they are slightly stretched to the common 9:16 size rather than cropped.

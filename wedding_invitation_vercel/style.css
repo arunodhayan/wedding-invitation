@@ -1775,3 +1775,38 @@ body{
     transform:translate(-50%, -50%) !important;
   }
 }
+
+
+/* v50: exact same displayed size, no unused space, no crop */
+:root{--invite-width:min(520px, calc(100vw - 16px));}
+.scene{
+  width:var(--invite-width) !important;
+  aspect-ratio:9 / 16 !important;
+  min-height:0 !important;
+  height:auto !important;
+  margin:0 auto 18px !important;
+  overflow:hidden !important;
+  background:transparent !important;
+}
+.scene > img.bg,
+.scene > img.bg.contain-top,
+#main-scene > img.bg,
+#haldi > img.bg,
+#sangeeth > img.bg,
+#reception > img.bg,
+#wedding > img.bg,
+#dining > img.bg{
+  position:absolute !important;
+  inset:0 !important;
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  max-height:none !important;
+  object-fit:fill !important;
+  object-position:center center !important;
+  background:transparent !important;
+}
+@media(max-width:480px){
+  .scene{width:calc(100vw - 12px) !important;margin-bottom:14px !important;}
+}
