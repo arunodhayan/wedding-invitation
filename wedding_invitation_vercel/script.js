@@ -22,3 +22,10 @@ setTimeout(() => { if (scrollTip) scrollTip.style.opacity = '.1'; }, 6000);
 window.addEventListener('scroll', () => {
   if (scrollTip) scrollTip.style.opacity = window.scrollY > 50 ? '.08' : '.75';
 }, { passive: true });
+
+if (openInviteBtn) {
+  openInviteBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openInvitation();
+  });
+}

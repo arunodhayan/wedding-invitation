@@ -1,5 +1,5 @@
-# Wedding Invitation — diya lamps moved to bottom
+# Wedding Invitation — Flicker Removed
 
-Updated as requested:
-- The diya lamps on the Wedding page are now positioned at the bottom.
-- All other styling, borders, animations, and page order remain unchanged.
+This version removes the animated diya flicker from the Wedding page.
+
+Everything else remains unchanged.

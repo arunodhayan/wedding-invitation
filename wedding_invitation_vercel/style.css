@@ -438,3 +438,980 @@ body{
   .diya-base{ width:13px; height:6px; }
   .diya-flame-core{ width:10px; height:19px; }
 }
+
+
+/* v20: remove visible gold borders while keeping card separation */
+.scene::after,
+.door-overlay::after{
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+.scene::before{
+  content: none !important;
+}
+
+
+/* v22: visible location icons */
+.map-hotspot{
+  position:absolute !important;
+  inset:auto !important;
+  right:18px;
+  bottom:18px;
+  width:52px;
+  height:52px;
+  z-index:8;
+  border-radius:999px;
+  text-indent:0 !important;
+  background:linear-gradient(180deg, rgba(255,251,241,.95) 0%, rgba(241,221,177,.96) 100%) !important;
+  border:1px solid rgba(174,128,53,.35);
+  box-shadow:0 10px 22px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.7);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  overflow:hidden;
+}
+.map-hotspot::before{
+  content:'📍';
+  font-size:24px;
+  line-height:1;
+  transform:translateY(-1px);
+}
+.map-hotspot:hover{transform:translateY(-1px);}
+.map-hotspot:active{transform:scale(.97);}
+@media(max-width:480px){
+  .map-hotspot{right:14px; bottom:14px; width:48px; height:48px;}
+  .map-hotspot::before{font-size:22px;}
+}
+
+/* v22: replace door flowers with small yellow dandelion puffs + rose petals */
+.door-flowers span{
+  width:10px !important;
+  height:10px !important;
+  border-radius:50% !important;
+  background:radial-gradient(circle at 50% 50%, #fff6b8 0 24%, #ffe364 25% 58%, rgba(255,227,100,.45) 59% 100%) !important;
+  box-shadow:
+    0 0 0 3px rgba(255,231,118,.16),
+    0 0 8px rgba(255,211,68,.22) !important;
+  transform:rotate(var(--r,0deg)) scale(var(--s,1)) !important;
+  opacity:0;
+}
+.door-flowers span::before,
+.door-flowers span::after{
+  content:'';
+  position:absolute;
+  inset:-4px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,233,132,.65) 0 1px, transparent 2px),
+    radial-gradient(circle at 100% 50%, rgba(255,233,132,.65) 0 1px, transparent 2px),
+    radial-gradient(circle at 50% 100%, rgba(255,233,132,.65) 0 1px, transparent 2px),
+    radial-gradient(circle at 0% 50%, rgba(255,233,132,.65) 0 1px, transparent 2px),
+    radial-gradient(circle at 18% 18%, rgba(255,233,132,.65) 0 1px, transparent 2px),
+    radial-gradient(circle at 82% 18%, rgba(255,233,132,.65) 0 1px, transparent 2px),
+    radial-gradient(circle at 18% 82%, rgba(255,233,132,.65) 0 1px, transparent 2px),
+    radial-gradient(circle at 82% 82%, rgba(255,233,132,.65) 0 1px, transparent 2px);
+  opacity:.85;
+}
+.door-flowers span:nth-child(even){
+  width:11px !important;
+  height:15px !important;
+  border-radius:12px 2px 12px 2px !important;
+  background:linear-gradient(180deg, #ffd6df 0%, #f38ca9 60%, #d85b7d 100%) !important;
+  box-shadow:0 1px 6px rgba(222,97,132,.28) !important;
+}
+.door-flowers span:nth-child(even)::before,
+.door-flowers span:nth-child(even)::after{
+  display:none;
+}
+.door-overlay.open .door-flowers span{
+  animation:doorFlowerFallMix var(--d) linear forwards !important;
+  animation-delay:var(--delay);
+}
+@keyframes doorFlowerFallMix{
+  0%{transform:translate3d(0,0,0) rotate(0deg) scale(.82);opacity:0;}
+  10%{opacity:.96;}
+  100%{transform:translate3d(22px,118svh,0) rotate(430deg) scale(1.05);opacity:.08;}
+}
+
+
+/* v23: remove visible location icons but keep links clickable */
+.map-hotspot{
+  position:absolute !important;
+  inset:0 !important;
+  width:auto !important;
+  height:auto !important;
+  right:auto !important;
+  bottom:auto !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  text-indent:-9999px !important;
+  display:block !important;
+}
+.map-hotspot::before{content:none !important;}
+
+
+/* v24: mobile image fit — show the full invitation artwork without cropping */
+@media (max-width: 699px){
+  html, body{
+    background:#151218 !important;
+  }
+
+  .story{
+    width:100% !important;
+    padding:8px 0 18px !important;
+  }
+
+  .scene{
+    width:calc(100vw - 10px) !important;
+    height:calc(100svh - 10px) !important;
+    min-height:0 !important;
+    margin:0 auto 12px !important;
+    border-radius:14px !important;
+    background:#151218 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+
+  .scene .bg{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    border-radius:14px !important;
+    background:#151218 !important;
+  }
+
+  .scene .contain-top{
+    object-fit:contain !important;
+    object-position:center center !important;
+  }
+
+  /* Opening door also shows the full uploaded artwork on phones */
+  .door-overlay{
+    background:#151218 !important;
+  }
+  .door-panel{
+    background-size:200% auto !important;
+    background-position-y:center !important;
+    background-color:#151218 !important;
+  }
+  .door-panel.left{background-position:left center !important;}
+  .door-panel.right{background-position:right center !important;}
+
+  .open-invite-btn{
+    bottom:max(6%, env(safe-area-inset-bottom)) !important;
+  }
+
+  /* Keep effects inside the visible invitation frame */
+  .petals,.fairy-lights,.sparkles,.garland-sparkle,.dining-lights,
+  .music-notes,.wedding-flowers,.diya-lamps{
+    inset:0 !important;
+    overflow:hidden !important;
+    border-radius:14px;
+  }
+}
+
+/* Small/short phones: preserve full artwork even if letterboxed */
+@media (max-width: 430px) and (max-height: 760px){
+  .scene{
+    height:calc(100svh - 6px) !important;
+    margin-bottom:10px !important;
+  }
+  .scene .bg{
+    object-fit:contain !important;
+  }
+}
+
+
+/* v25: visible Beegaru Oota venue block */
+.beegaru-venue{
+  position:absolute;
+  left:50%;
+  bottom:6%;
+  transform:translateX(-50%);
+  z-index:7;
+  min-width:190px;
+  padding:11px 16px 12px;
+  border-radius:18px;
+  background:rgba(255,249,231,.88);
+  backdrop-filter:blur(7px);
+  box-shadow:0 10px 24px rgba(35,51,18,.18);
+  text-align:center;
+}
+.beegaru-venue .venue-label{
+  display:block;
+  margin-bottom:5px;
+  font:600 .68rem/1.2 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#5c7028;
+}
+.beegaru-venue a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:38px;
+  padding:0 16px;
+  border-radius:999px;
+  text-decoration:none;
+  background:linear-gradient(180deg,#5d772e,#3f581d);
+  color:#fff;
+  font:600 .73rem/1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+@media(max-width:480px){
+  .beegaru-venue{
+    bottom:4.5%;
+    min-width:172px;
+    padding:9px 14px 10px;
+  }
+  .beegaru-venue a{
+    min-height:36px;
+    font-size:.69rem;
+  }
+}
+
+
+/* v26: center the Beegaru Oota venue block in the empty area, away from text */
+.beegaru-venue{
+  left: 50% !important;
+  top: 72% !important;
+  bottom: auto !important;
+  transform: translate(-50%, -50%) !important;
+  width: min(240px, 72vw);
+}
+@media (max-width: 480px){
+  .beegaru-venue{
+    top: 70% !important;
+    width: min(220px, 76vw);
+  }
+}
+
+
+/* v27: Beegaru uses baked-in generated invitation image; extra overlay removed */
+#dining .beegaru-venue{display:none !important;}
+
+
+/* v28: mobile no-crop layout */
+@media (max-width: 699px){
+  .story{
+    padding:12px 0 20px !important;
+  }
+
+  .scene{
+    width:calc(100vw - 12px) !important;
+    min-height:0 !important;
+    height:auto !important;
+    margin:0 auto 14px !important;
+    display:block !important;
+    border-radius:16px !important;
+    overflow:hidden !important;
+    background:#17131a !important;
+    position:relative !important;
+  }
+
+  .scene .bg,
+  .scene .bg.contain-top{
+    position:relative !important;
+    inset:auto !important;
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    border-radius:16px !important;
+  }
+
+  /* Keep all effects aligned to the actual image area */
+  .petals,
+  .haldi-petals,
+  .fairy-lights,
+  .music-notes,
+  .sparkles,
+  .garland-sparkle,
+  .wedding-flowers,
+  .diya-flickers,
+  .diya-lamps,
+  .dining-lights{
+    position:absolute !important;
+    inset:0 !important;
+  }
+
+  /* Clickable location areas follow the full image without changing its size */
+  .map-hotspot{
+    position:absolute !important;
+    inset:0 !important;
+  }
+
+  /* Do not add artificial viewport-height stretching */
+  #main-scene,
+  #haldi,
+  #sangeeth,
+  #reception,
+  #wedding,
+  #dining{
+    min-height:0 !important;
+  }
+}
+
+/* Small phones */
+@media (max-width: 390px){
+  .scene{
+    width:calc(100vw - 8px) !important;
+    margin-bottom:10px !important;
+    border-radius:13px !important;
+  }
+  .scene .bg,
+  .scene .bg.contain-top{
+    border-radius:13px !important;
+  }
+}
+
+
+/* v29: extra fix for Beegaru Oota on mobile so it never crops */
+@media (max-width: 699px){
+  #dining{
+    height: auto !important;
+    min-height: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+    background: #17131a !important;
+  }
+
+  #dining .bg,
+  #dining .bg.contain-top{
+    position: relative !important;
+    display: block !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+    aspect-ratio: auto !important;
+  }
+
+  #dining .dining-lights,
+  #dining .map-hotspot,
+  #dining .beegaru-venue{
+    inset: 0 !important;
+    border-radius: inherit !important;
+  }
+}
+
+@media (max-width: 430px){
+  #dining{
+    width: calc(100vw - 8px) !important;
+  }
+}
+
+
+/* v30: force full-image mobile layout for ALL invite pages */
+@media (max-width: 768px){
+  html, body{
+    overflow-x:hidden !important;
+  }
+
+  .story{
+    padding: 10px 0 18px !important;
+    display:block !important;
+    scroll-snap-type: none !important;
+  }
+
+  .scene,
+  #main-scene,
+  #haldi,
+  #sangeeth,
+  #reception,
+  #wedding,
+  #dining{
+    width: calc(100vw - 10px) !important;
+    max-width: 560px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 auto 12px !important;
+    display: block !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 14px !important;
+    background: #17131a !important;
+    scroll-snap-align: none !important;
+    aspect-ratio: auto !important;
+  }
+
+  .scene > img.bg,
+  .scene > img.bg.contain-top,
+  #main-scene > img.bg,
+  #haldi > img.bg,
+  #sangeeth > img.bg,
+  #reception > img.bg,
+  #wedding > img.bg,
+  #dining > img.bg,
+  #dining > img.bg.contain-top{
+    position: relative !important;
+    inset: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+    aspect-ratio: auto !important;
+    border-radius: inherit !important;
+    z-index: 1 !important;
+    background: #17131a !important;
+  }
+
+  /* overlays stay on top of the full visible image */
+  .scene > .petals,
+  .scene > .haldi-petals,
+  .scene > .fairy-lights,
+  .scene > .music-notes,
+  .scene > .sparkles,
+  .scene > .garland-sparkle,
+  .scene > .wedding-flowers,
+  .scene > .diya-flickers,
+  .scene > .diya-lamps,
+  .scene > .dining-lights,
+  .scene > .map-hotspot{
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 2 !important;
+    border-radius: inherit !important;
+  }
+
+  .scene-label{
+    z-index: 3 !important;
+  }
+}
+
+@media (max-width: 480px){
+  .scene,
+  #main-scene,
+  #haldi,
+  #sangeeth,
+  #reception,
+  #wedding,
+  #dining{
+    width: calc(100vw - 6px) !important;
+    margin-bottom: 10px !important;
+    border-radius: 12px !important;
+  }
+}
+
+
+/* v31: show FULL invitation image on every screen with no crop */
+html, body{
+  overflow-x: hidden !important;
+}
+body{
+  display:block !important;
+  background:#18151d !important;
+}
+.story{
+  width:100% !important;
+  max-width:none !important;
+  padding:0 !important;
+  box-shadow:none !important;
+  scroll-snap-type:y mandatory;
+}
+.scene,
+#main-scene,
+#haldi,
+#sangeeth,
+#reception,
+#wedding,
+#dining{
+  width:min(520px, 100vw) !important;
+  max-width:100vw !important;
+  height:100svh !important;
+  min-height:100svh !important;
+  margin:0 auto !important;
+  display:block !important;
+  position:relative !important;
+  overflow:hidden !important;
+  background:#18151d !important;
+  scroll-snap-align:start;
+}
+.scene > .bg,
+.scene > .bg.contain-top,
+#main-scene > .bg,
+#haldi > .bg,
+#sangeeth > .bg,
+#reception > .bg,
+#wedding > .bg,
+#dining > .bg,
+#dining > .bg.contain-top{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  border-radius:0 !important;
+  background:#18151d !important;
+  z-index:1 !important;
+}
+.petals,.haldi-petals,.fairy-lights,.music-notes,.sparkles,.garland-sparkle,.wedding-flowers,.diya-flickers,.diya-lamps,.dining-lights,.map-hotspot{
+  position:absolute !important;
+  inset:0 !important;
+  z-index:2 !important;
+}
+.scene::after{inset:8px !important;}
+.scene::before{top:12px !important;}
+@media (max-width:700px){
+  .scene,#main-scene,#haldi,#sangeeth,#reception,#wedding,#dining{
+    width:100vw !important;
+  }
+  .scene::after{inset:6px !important;}
+}
+
+
+/* v32: FULL images + no gaps between invitation pages */
+.story{
+  width:min(520px,100vw) !important;
+  margin:0 auto !important;
+  padding:0 !important;
+  display:block !important;
+  background:#18151d !important;
+  scroll-snap-type:none !important;
+}
+
+.scene,
+#main-scene,
+#haldi,
+#sangeeth,
+#reception,
+#wedding,
+#dining{
+  width:100% !important;
+  max-width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  display:block !important;
+  position:relative !important;
+  overflow:hidden !important;
+  border-radius:0 !important;
+  background:#18151d !important;
+  box-shadow:none !important;
+  scroll-snap-align:none !important;
+}
+
+.scene > img.bg,
+.scene > img.bg.contain-top,
+#main-scene > img.bg,
+#haldi > img.bg,
+#sangeeth > img.bg,
+#reception > img.bg,
+#wedding > img.bg,
+#dining > img.bg,
+#dining > img.bg.contain-top{
+  position:relative !important;
+  inset:auto !important;
+  top:auto !important;
+  right:auto !important;
+  bottom:auto !important;
+  left:auto !important;
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  max-width:100% !important;
+  max-height:none !important;
+  min-height:0 !important;
+  object-fit:contain !important;
+  object-position:center top !important;
+  aspect-ratio:auto !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  z-index:1 !important;
+}
+
+/* Animations remain layered over each image */
+.scene > .petals,
+.scene > .haldi-petals,
+.scene > .fairy-lights,
+.scene > .music-notes,
+.scene > .sparkles,
+.scene > .garland-sparkle,
+.scene > .wedding-flowers,
+.scene > .diya-flickers,
+.scene > .diya-lamps,
+.scene > .dining-lights,
+.scene > .map-hotspot{
+  position:absolute !important;
+  inset:0 !important;
+  z-index:2 !important;
+  border-radius:0 !important;
+}
+
+/* Remove decorative frame so adjoining images visually connect */
+.scene::before,
+.scene::after{
+  display:none !important;
+  content:none !important;
+}
+
+/* No extra spacing on mobile */
+@media (max-width:768px){
+  .story{
+    width:100vw !important;
+  }
+
+  .scene,
+  #main-scene,
+  #haldi,
+  #sangeeth,
+  #reception,
+  #wedding,
+  #dining{
+    width:100vw !important;
+    margin:0 !important;
+    border-radius:0 !important;
+  }
+
+  .scene > img.bg,
+  .scene > img.bg.contain-top{
+    width:100vw !important;
+    height:auto !important;
+    border-radius:0 !important;
+  }
+}
+
+
+/* v33: tasteful visual gap between each full invitation page */
+body{
+  background:#18151d !important;
+}
+.story{
+  padding:18px 0 28px !important;
+  background:#18151d !important;
+}
+.scene,
+#main-scene,
+#haldi,
+#sangeeth,
+#reception,
+#wedding,
+#dining{
+  margin:0 auto 24px !important;
+  border-radius:18px !important;
+  overflow:hidden !important;
+  box-shadow:0 12px 30px rgba(0,0,0,.24) !important;
+}
+.scene:last-child,
+#dining{
+  margin-bottom:0 !important;
+}
+.scene > img.bg,
+.scene > img.bg.contain-top{
+  border-radius:18px !important;
+}
+
+/* Keep a smaller but clear gap on phones */
+@media(max-width:768px){
+  .story{
+    padding:10px 0 18px !important;
+  }
+  .scene,
+  #main-scene,
+  #haldi,
+  #sangeeth,
+  #reception,
+  #wedding,
+  #dining{
+    width:calc(100vw - 10px) !important;
+    margin:0 auto 16px !important;
+    border-radius:14px !important;
+  }
+  .scene:last-child,
+  #dining{
+    margin-bottom:0 !important;
+  }
+  .scene > img.bg,
+  .scene > img.bg.contain-top{
+    width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+    border-radius:14px !important;
+  }
+}
+
+
+/* v34: venue text itself is clickable without showing a location icon */
+.venue-hotspot{
+  position:absolute;
+  z-index:9;
+  display:block;
+  background:transparent;
+  border:0;
+  cursor:pointer;
+  text-decoration:none;
+  -webkit-tap-highlight-color:rgba(255,255,255,.10);
+}
+.venue-hotspot:focus-visible{
+  outline:2px solid rgba(255,255,255,.75);
+  outline-offset:2px;
+  border-radius:8px;
+}
+
+/* Hotspots align with the printed VENUE text on each artwork */
+.haldi-venue{
+  left:34%;
+  top:44.2%;
+  width:36%;
+  height:5.8%;
+}
+.sangeeth-venue{
+  left:18%;
+  top:48.0%;
+  width:64%;
+  height:5.2%;
+}
+.reception-venue{
+  left:52%;
+  top:25.2%;
+  width:39%;
+  height:8.5%;
+}
+.wedding-venue{
+  left:52%;
+  top:48.2%;
+  width:38%;
+  height:7.2%;
+}
+.beegaru-venue-hotspot{
+  left:34%;
+  top:78.0%;
+  width:32%;
+  height:7.5%;
+}
+
+@media(max-width:768px){
+  .venue-hotspot{z-index:9 !important;}
+}
+
+
+/* v35: add couple names on wedding invitation */
+#wedding .wedding-couple-names{
+  position:absolute;
+  left:50%;
+  top:66.2%;
+  transform:translateX(-50%);
+  width:74%;
+  z-index:8;
+  text-align:center;
+  pointer-events:none;
+  color:#8b1637;
+  text-shadow:0 1px 0 rgba(255,255,255,0.40), 0 2px 8px rgba(255,247,230,0.18);
+}
+#wedding .wedding-couple-names .name-line{
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.02;
+}
+#wedding .wedding-couple-names .first,
+#wedding .wedding-couple-names .second{
+  font-size: clamp(1.9rem, 4.3vw, 3.1rem);
+}
+#wedding .wedding-couple-names .weds-line{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(0.72rem, 1.6vw, 1.02rem);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  margin: 0.18em 0 0.26em;
+  color:#b4872c;
+  text-shadow:0 1px 0 rgba(255,255,255,0.55), 0 2px 6px rgba(180,135,44,0.18);
+}
+@media (max-width: 700px){
+  #wedding .wedding-couple-names{
+    top: 67.1%;
+    width: 82%;
+  }
+  #wedding .wedding-couple-names .first,
+  #wedding .wedding-couple-names .second{
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
+  }
+  #wedding .wedding-couple-names .weds-line{
+    font-size: clamp(0.62rem, 2.7vw, 0.86rem);
+    margin: 0.14em 0 0.22em;
+  }
+}
+
+
+/* v36: move wedding names between title and date/location */
+#wedding .wedding-couple-names{
+  top: 49.8%;
+  width: 76%;
+}
+#wedding .wedding-couple-names .first,
+#wedding .wedding-couple-names .second{
+  font-size: clamp(1.6rem, 3.8vw, 2.55rem);
+  line-height: 1.02;
+}
+#wedding .wedding-couple-names .weds-line{
+  font-size: clamp(0.64rem, 1.35vw, 0.92rem);
+  margin: 0.16em 0 0.18em;
+}
+@media (max-width: 700px){
+  #wedding .wedding-couple-names{
+    top: 50.6%;
+    width: 80%;
+  }
+  #wedding .wedding-couple-names .first,
+  #wedding .wedding-couple-names .second{
+    font-size: clamp(1.3rem, 5.5vw, 1.95rem);
+  }
+  #wedding .wedding-couple-names .weds-line{
+    font-size: clamp(0.56rem, 2.15vw, 0.78rem);
+    letter-spacing: 0.22em;
+  }
+}
+
+/* v36: rose petals falling when the door opens */
+.door-flowers span,
+.door-flowers span:nth-child(even){
+  width: 11px !important;
+  height: 16px !important;
+  border-radius: 85% 18% 85% 18% !important;
+  background: linear-gradient(180deg, #ffe0ea 0%, #ff8faf 52%, #dc4a73 100%) !important;
+  box-shadow: 0 2px 8px rgba(220,74,115,.22) !important;
+  transform: rotate(var(--r,0deg)) scale(var(--s,1)) !important;
+}
+.door-flowers span::before,
+.door-flowers span::after,
+.door-flowers span:nth-child(even)::before,
+.door-flowers span:nth-child(even)::after{
+  display:none !important;
+}
+.door-flowers span:nth-child(3n){
+  background: linear-gradient(180deg, #fff0f4 0%, #ffb6c9 54%, #f06c90 100%) !important;
+}
+.door-flowers span:nth-child(4n){
+  width: 12px !important;
+  height: 18px !important;
+  background: linear-gradient(180deg, #ffe8ef 0%, #f59ab6 52%, #c83d63 100%) !important;
+}
+.door-overlay.open .door-flowers span{
+  animation: doorRosePetalFall var(--d) linear forwards !important;
+  animation-delay: var(--delay);
+}
+@keyframes doorRosePetalFall{
+  0%{transform:translate3d(0,0,0) rotate(0deg) scale(calc(var(--s,1) * .85));opacity:0;}
+  12%{opacity:.96;}
+  100%{transform:translate3d(28px,118svh,0) rotate(460deg) scale(calc(var(--s,1) * 1.05));opacity:.08;}
+}
+
+
+/* v37: place couple names cleanly between Wedding Ceremony and date/location */
+#wedding .wedding-couple-names{
+  top: 42.7% !important;
+  width: 72% !important;
+  transform: translateX(-50%) !important;
+}
+#wedding .wedding-couple-names .name-line{
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+  line-height: 0.98 !important;
+  letter-spacing: 0.01em !important;
+}
+#wedding .wedding-couple-names .first,
+#wedding .wedding-couple-names .second{
+  font-size: clamp(1.35rem, 3.15vw, 2.05rem) !important;
+}
+#wedding .wedding-couple-names .weds-line{
+  font-size: clamp(0.50rem, 1.05vw, 0.70rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0.22em !important;
+  margin: 0.10em 0 0.16em !important;
+}
+
+@media (max-width: 700px){
+  #wedding .wedding-couple-names{
+    top: 43.2% !important;
+    width: 76% !important;
+  }
+  #wedding .wedding-couple-names .first,
+  #wedding .wedding-couple-names .second{
+    font-size: clamp(1.05rem, 5.0vw, 1.55rem) !important;
+  }
+  #wedding .wedding-couple-names .weds-line{
+    font-size: clamp(0.44rem, 1.8vw, 0.62rem) !important;
+    margin: 0.08em 0 0.12em !important;
+  }
+}
+
+
+/* ===== v38 FINAL GENERATED WEDDING PAGE ===== */
+#wedding .bg,
+#wedding .bg.contain-top{
+  object-fit:contain !important;
+  object-position:center top !important;
+}
+#wedding .wedding-couple-names,
+#wedding .diya-lamps,
+#wedding .diya-flickers{display:none !important;}
+#wedding .wedding-flames{position:absolute;inset:0;z-index:6;pointer-events:none;}
+#wedding .wedding-flames .flame{
+  position:absolute;width:15px;height:28px;transform:translate(-50%,-50%);transform-origin:50% 100%;
+  animation:weddingDiyaFlicker 1.05s ease-in-out infinite alternate;
+  filter:drop-shadow(0 0 4px rgba(255,188,77,.95)) drop-shadow(0 0 10px rgba(255,213,120,.55));
+}
+#wedding .wedding-flames .flame::before{
+  content:"";position:absolute;left:50%;bottom:0;width:15px;height:26px;transform:translateX(-50%);
+  border-radius:55% 55% 50% 50% / 70% 70% 35% 35%;
+  background:radial-gradient(circle at 50% 66%,rgba(255,255,236,.99) 0 19%,rgba(255,231,143,.96) 36%,rgba(255,156,32,.86) 72%,rgba(255,100,0,0) 100%);
+  opacity:.98;
+}
+#wedding .wedding-flames .flame::after{
+  content:"";position:absolute;left:50%;bottom:6px;width:7px;height:14px;transform:translateX(-50%);
+  border-radius:55% 55% 50% 50% / 70% 70% 35% 35%;
+  background:radial-gradient(circle at 50% 60%,#fffef2 0 40%,#ffe39d 62%,rgba(255,227,157,0) 100%);
+}
+#wedding .wedding-flames .left{left:41.9%;top:79.9%;}
+#wedding .wedding-flames .right{left:69.7%;top:79.9%;animation-delay:.24s;}
+@keyframes weddingDiyaFlicker{
+  0%{transform:translate(-50%,-50%) scale(.92) rotate(-3deg);opacity:.76;}
+  28%{transform:translate(-50%,-51%) scale(1.05) rotate(2deg);opacity:1;}
+  63%{transform:translate(-50%,-49.5%) scale(.97) rotate(-1deg);opacity:.88;}
+  100%{transform:translate(-50%,-50%) scale(1.08) rotate(3deg);opacity:1;}
+}
+#wedding .wedding-venue{left:54% !important;top:50.8% !important;width:31% !important;height:7.8% !important;z-index:9 !important;}
+#wedding .wedding-flowers{z-index:4 !important;pointer-events:none !important;}
+#wedding .wedding-flowers span{opacity:.55;}
+@media(max-width:700px){
+  #wedding .wedding-flames .left{left:41.9%;top:79.9%;}
+  #wedding .wedding-flames .right{left:69.7%;top:79.9%;}
+  #wedding .wedding-venue{left:54% !important;top:50.5% !important;width:32% !important;height:8.5% !important;}
+}
+
+
+/* v40: wedding diya flicker removed */
+#wedding .wedding-flames,
+#wedding .wedding-flames .flame,
+#wedding .wedding-flames .flame::before,
+#wedding .wedding-flames .flame::after{
+  display:none !important;
+  animation:none !important;
+}
