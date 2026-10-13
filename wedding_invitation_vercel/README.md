@@ -1,11 +1,20 @@
-# Wedding Invitation — Equal Size, No Empty Space
+# Mobile-first wedding invitation — v53
 
-All displayed invitation images are normalized to exactly 900×1600 (9:16).
+Main fix: previous builds could reopen on the wrong page in mobile browsers.
+This version keeps the document fixed and scrolls *inside* #story, which always
+starts from its first (main invitation) card when the door opens.
 
-- Same size for every page
-- No unused black/cream space
-- No cropping
-- Full artwork remains visible
-- Existing animations, links, scroll gap, and centered Open Invitation button are preserved
+Sequence:
+1. Door opening (tap Open Invitation)
+2. Main invitation
+3. Haldi
+4. Sangeeth
+5. Reception
+6. Wedding Ceremony (updated image without couple names)
+7. Beegaru Oota
 
-Different source images had different aspect ratios, so they are slightly stretched to the common 9:16 size rather than cropped.
+Other features retained: rose petals on door opening, event animations, venue
+hotspots linked to Maps, same-size invitation cards, and no temple bell sound.
+
+Upload the *contents* of this ZIP to your Vercel project root: index.html,
+style.css, script.js, vercel.json, and assets/.
