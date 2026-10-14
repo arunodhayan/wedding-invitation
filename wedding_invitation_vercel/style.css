@@ -155,3 +155,46 @@ button,a{-webkit-tap-highlight-color:transparent}
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{animation:none !important;transition-duration:.01ms !important}
 }
+
+
+/* v55 final update: no door rose petals, no Beegaru lights */
+.door-flowers, .dining-lights { display:none !important; }
+
+
+/* v59: each invitation has baked-in, matching "Click Here" text below its location area.
+   These invisible hotspots make the printed words themselves tappable. */
+.venue-click-here{
+  display:block;position:absolute;z-index:13;
+  text-decoration:none;background:transparent;cursor:pointer;
+  -webkit-tap-highlight-color:rgba(247,210,129,.26);
+}
+.venue-click-here:focus-visible{outline:2px solid #f5cf6e;border-radius:4px}
+.click-haldi {left:36%; top:49.5%; width:28%; height:5.0%;}
+.click-sangeeth {left:12%; top:52.0%; width:23%; height:4.3%;}
+.click-reception {left:62%; top:36.8%; width:26%; height:5.4%;}
+.click-wedding {left:60%; top:63.4%; width:31%; height:6.0%;}
+.click-dining {left:38%; top:89.2%; width:24%; height:5.1%;}
+/* Existing venue hotspots remain clickable for visitors who tap the printed venue name. */
+.wedding-venue{top:60.2%;height:7.1%;}
+.reception-venue{top:25.2%;height:8.5%;}
+
+
+/* v60: precise link areas follow the Haldi-PDF-style italic labels. */
+.haldi-venue{left:38%;top:51.2%;width:34%;height:3.5%;}
+.sangeeth-venue{left:18%;top:48.4%;width:64%;height:3.4%;}
+.reception-venue{left:52%;top:26.8%;width:39%;height:6.1%;}
+.wedding-venue{left:55%;top:60.1%;width:34%;height:4.9%;}
+.beegaru-venue-hotspot{left:31%;top:73.6%;width:38%;height:12%;}
+.click-haldi{left:35%;top:53.0%;width:33%;height:5.0%;}
+.click-sangeeth{left:34%;top:51.9%;width:33%;height:3.9%;}
+.click-reception{left:61%;top:36.2%;width:28%;height:4.2%;}
+.click-wedding{left:60%;top:63.4%;width:29%;height:4.3%;}
+.click-dining{left:35%;top:89.9%;width:30%;height:4.9%;}
+
+
+/* v62: do not expose the opaque doorway backdrop during the opening animation.
+   The first invitation image is already mounted directly underneath. */
+#doorOverlay.open,
+#doorOverlay.hide {
+  background: transparent !important;
+}

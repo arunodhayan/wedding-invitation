@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#120f16" />
   <title>Wedding Invitation</title>
-  <link rel="stylesheet" href="style.css?v=54-verified" />
+  <link rel="preload" href="assets/main.jpg" as="image" fetchpriority="high" />
+  <link rel="stylesheet" href="style.css?v=62-no-black" />
 </head>
 <body>
   <div class="door-overlay" id="doorOverlay" aria-label="Open invitation">
-    <div class="door-flowers" aria-hidden="true"><span style="--x:3;--d:3.2s;--delay:0.0s;--r:-20deg;--s:0.8"></span><span style="--x:8;--d:3.5500000000000003s;--delay:0.08s;--r:-7deg;--s:0.92"></span><span style="--x:13;--d:3.9000000000000004s;--delay:0.16s;--r:6deg;--s:1.04"></span><span style="--x:18;--d:4.25s;--delay:0.24s;--r:19deg;--s:1.1600000000000001"></span><span style="--x:23;--d:4.6s;--delay:0.32s;--r:-8deg;--s:0.8"></span><span style="--x:28;--d:4.95s;--delay:0.4s;--r:5deg;--s:0.92"></span><span style="--x:33;--d:5.3s;--delay:0.48s;--r:18deg;--s:1.04"></span><span style="--x:38;--d:3.2s;--delay:0.56s;--r:-9deg;--s:1.1600000000000001"></span><span style="--x:43;--d:3.5500000000000003s;--delay:0.64s;--r:4deg;--s:0.8"></span><span style="--x:48;--d:3.9000000000000004s;--delay:0.0s;--r:17deg;--s:0.92"></span><span style="--x:53;--d:4.25s;--delay:0.08s;--r:-10deg;--s:1.04"></span><span style="--x:58;--d:4.6s;--delay:0.16s;--r:3deg;--s:1.1600000000000001"></span><span style="--x:63;--d:4.95s;--delay:0.24s;--r:16deg;--s:0.8"></span><span style="--x:68;--d:5.3s;--delay:0.32s;--r:-11deg;--s:0.92"></span><span style="--x:73;--d:3.2s;--delay:0.4s;--r:2deg;--s:1.04"></span><span style="--x:78;--d:3.5500000000000003s;--delay:0.48s;--r:15deg;--s:1.1600000000000001"></span><span style="--x:83;--d:3.9000000000000004s;--delay:0.56s;--r:-12deg;--s:0.8"></span><span style="--x:88;--d:4.25s;--delay:0.64s;--r:1deg;--s:0.92"></span><span style="--x:93;--d:4.6s;--delay:0.0s;--r:14deg;--s:1.04"></span><span style="--x:4;--d:4.95s;--delay:0.08s;--r:-13deg;--s:1.1600000000000001"></span><span style="--x:9;--d:5.3s;--delay:0.16s;--r:0deg;--s:0.8"></span><span style="--x:14;--d:3.2s;--delay:0.24s;--r:13deg;--s:0.92"></span><span style="--x:19;--d:3.5500000000000003s;--delay:0.32s;--r:-14deg;--s:1.04"></span><span style="--x:24;--d:3.9000000000000004s;--delay:0.4s;--r:-1deg;--s:1.1600000000000001"></span><span style="--x:29;--d:4.25s;--delay:0.48s;--r:12deg;--s:0.8"></span><span style="--x:34;--d:4.6s;--delay:0.56s;--r:-15deg;--s:0.92"></span><span style="--x:39;--d:4.95s;--delay:0.64s;--r:-2deg;--s:1.04"></span><span style="--x:44;--d:5.3s;--delay:0.0s;--r:11deg;--s:1.1600000000000001"></span><span style="--x:49;--d:3.2s;--delay:0.08s;--r:-16deg;--s:0.8"></span><span style="--x:54;--d:3.5500000000000003s;--delay:0.16s;--r:-3deg;--s:0.92"></span><span style="--x:59;--d:3.9000000000000004s;--delay:0.24s;--r:10deg;--s:1.04"></span><span style="--x:64;--d:4.25s;--delay:0.32s;--r:-17deg;--s:1.1600000000000001"></span><span style="--x:69;--d:4.6s;--delay:0.4s;--r:-4deg;--s:0.8"></span><span style="--x:74;--d:4.95s;--delay:0.48s;--r:9deg;--s:0.92"></span><span style="--x:79;--d:5.3s;--delay:0.56s;--r:-18deg;--s:1.04"></span><span style="--x:84;--d:3.2s;--delay:0.64s;--r:-5deg;--s:1.1600000000000001"></span><span style="--x:89;--d:3.5500000000000003s;--delay:0.0s;--r:8deg;--s:0.8"></span><span style="--x:94;--d:3.9000000000000004s;--delay:0.08s;--r:-19deg;--s:0.92"></span><span style="--x:5;--d:4.25s;--delay:0.16s;--r:-6deg;--s:1.04"></span><span style="--x:10;--d:4.6s;--delay:0.24s;--r:7deg;--s:1.1600000000000001"></span><span style="--x:15;--d:4.95s;--delay:0.32s;--r:-20deg;--s:0.8"></span><span style="--x:20;--d:5.3s;--delay:0.4s;--r:-7deg;--s:0.92"></span></div>
     <div class="door-panel left"></div>
     <div class="door-panel right"></div>
     <button class="open-invite-btn" id="openInviteBtn" type="button">Open Invitation</button>
@@ -19,19 +19,21 @@
 
   <main class="story" id="story">
     <section class="scene" id="main-scene">
-      <img src="assets/main.jpg" alt="Main invitation" class="bg" />
+      <img src="assets/main.jpg" alt="Main invitation" class="bg contain-top" loading="eager" decoding="sync" fetchpriority="high" />
     </section>
 
     <section class="scene location-scene" id="haldi" data-link="https://share.google/ZyQCRCUno328uouvm">
       <img src="assets/haldi.jpg" alt="Haldi invitation" class="bg" />
       <div class="petals haldi-petals" aria-hidden="true"><span style="--x:0;--d:4.2s;--delay:0.0s;--r:-25deg;--s:0.85"></span><span style="--x:6;--d:4.8s;--delay:0.35s;--r:-14deg;--s:1.0"></span><span style="--x:12;--d:5.4s;--delay:0.7s;--r:-3deg;--s:1.15"></span><span style="--x:18;--d:6.0s;--delay:1.0499999999999998s;--r:8deg;--s:0.85"></span><span style="--x:24;--d:6.6s;--delay:1.4s;--r:19deg;--s:1.0"></span><span style="--x:30;--d:7.2s;--delay:1.75s;--r:-20deg;--s:1.15"></span><span style="--x:36;--d:4.2s;--delay:2.0999999999999996s;--r:-9deg;--s:0.85"></span><span style="--x:42;--d:4.8s;--delay:2.4499999999999997s;--r:2deg;--s:1.0"></span><span style="--x:48;--d:5.4s;--delay:0.0s;--r:13deg;--s:1.15"></span><span style="--x:54;--d:6.0s;--delay:0.35s;--r:24deg;--s:0.85"></span><span style="--x:60;--d:6.6s;--delay:0.7s;--r:-15deg;--s:1.0"></span><span style="--x:66;--d:7.2s;--delay:1.0499999999999998s;--r:-4deg;--s:1.15"></span><span style="--x:72;--d:4.2s;--delay:1.4s;--r:7deg;--s:0.85"></span><span style="--x:78;--d:4.8s;--delay:1.75s;--r:18deg;--s:1.0"></span><span style="--x:84;--d:5.4s;--delay:2.0999999999999996s;--r:-21deg;--s:1.15"></span><span style="--x:90;--d:6.0s;--delay:2.4499999999999997s;--r:-10deg;--s:0.85"></span><span style="--x:96;--d:6.6s;--delay:0.0s;--r:1deg;--s:1.0"></span><span style="--x:2;--d:7.2s;--delay:0.35s;--r:12deg;--s:1.15"></span><span style="--x:8;--d:4.2s;--delay:0.7s;--r:23deg;--s:0.85"></span><span style="--x:14;--d:4.8s;--delay:1.0499999999999998s;--r:-16deg;--s:1.0"></span><span style="--x:20;--d:5.4s;--delay:1.4s;--r:-5deg;--s:1.15"></span><span style="--x:26;--d:6.0s;--delay:1.75s;--r:6deg;--s:0.85"></span><span style="--x:32;--d:6.6s;--delay:2.0999999999999996s;--r:17deg;--s:1.0"></span><span style="--x:38;--d:7.2s;--delay:2.4499999999999997s;--r:-22deg;--s:1.15"></span></div>
       <a class="venue-hotspot haldi-venue" href="https://share.google/ZyQCRCUno328uouvm" target="_blank" rel="noopener" aria-label="Open Haldi venue in Google Maps"></a>
+      <a class="venue-click-here click-haldi" href="https://share.google/ZyQCRCUno328uouvm" target="_blank" rel="noopener noreferrer" aria-label="Click Here for Haldi location on Google Maps"></a>
     </section>
 
     <section class="scene location-scene" id="sangeeth" data-link="https://share.google/AhD9SVv1Bw9mAEw5Q">
       <img src="assets/sangeeth.jpg" alt="Sangeeth invitation" class="bg" />
       <div class="music-notes" aria-hidden="true"><span style="left:8%;top:18%;animation-delay:0.0s">♪</span><span style="left:19%;top:29%;animation-delay:0.3s">♫</span><span style="left:30%;top:40%;animation-delay:0.6s">♬</span><span style="left:41%;top:51%;animation-delay:0.8999999999999999s">♪</span><span style="left:52%;top:62%;animation-delay:1.2s">♫</span><span style="left:63%;top:18%;animation-delay:1.5s">♬</span><span style="left:74%;top:29%;animation-delay:1.7999999999999998s">♪</span><span style="left:85%;top:40%;animation-delay:2.1s">♫</span><span style="left:12%;top:51%;animation-delay:0.0s">♬</span><span style="left:23%;top:62%;animation-delay:0.3s">♪</span><span style="left:34%;top:18%;animation-delay:0.6s">♫</span><span style="left:45%;top:29%;animation-delay:0.8999999999999999s">♬</span></div>
       <a class="venue-hotspot sangeeth-venue" href="https://share.google/AhD9SVv1Bw9mAEw5Q" target="_blank" rel="noopener" aria-label="Open Sangeeth venue in Google Maps"></a>
+      <a class="venue-click-here click-sangeeth" href="https://share.google/AhD9SVv1Bw9mAEw5Q" target="_blank" rel="noopener noreferrer" aria-label="Click Here for Sangeeth location on Google Maps"></a>
     </section>
 
     <section class="scene location-scene" id="reception" data-link="https://maps.app.goo.gl/7RafZ6vhFmiamHB5A">
@@ -49,6 +51,7 @@
         <span style="left:86%;animation-delay:1.62s"></span>
       </div>
       <a class="venue-hotspot reception-venue" href="https://maps.app.goo.gl/7RafZ6vhFmiamHB5A" target="_blank" rel="noopener" aria-label="Open Reception venue in Google Maps"></a>
+      <a class="venue-click-here click-reception" href="https://maps.app.goo.gl/7RafZ6vhFmiamHB5A" target="_blank" rel="noopener noreferrer" aria-label="Click Here for Reception location on Google Maps"></a>
     </section>
 
     <section class="scene location-scene" id="wedding" data-link="https://maps.app.goo.gl/7RafZ6vhFmiamHB5A">
@@ -56,19 +59,19 @@
       <div class="garland-sparkle" aria-hidden="true">
         <span style="left:8%;animation-delay:0.0s"></span><span style="left:18%;animation-delay:0.45s"></span><span style="left:28%;animation-delay:0.9s"></span><span style="left:38%;animation-delay:1.35s"></span><span style="left:48%;animation-delay:1.8s"></span><span style="left:58%;animation-delay:0.0s"></span><span style="left:68%;animation-delay:0.45s"></span><span style="left:78%;animation-delay:0.9s"></span><span style="left:88%;animation-delay:1.35s"></span>
       </div>
-      <div class="wedding-flowers" aria-hidden="true"><span class="white" style="--x:0;--d:5.0s;--delay:0.0s;--r:-20deg;--s:0.9"></span><span class="yellow" style="--x:9;--d:5.55s;--delay:0.28s;--r:-9deg;--s:1.0"></span><span class="white" style="--x:18;--d:6.1s;--delay:0.56s;--r:2deg;--s:1.1"></span><span class="yellow" style="--x:27;--d:6.65s;--delay:0.8400000000000001s;--r:13deg;--s:1.2000000000000002"></span><span class="white" style="--x:36;--d:7.2s;--delay:1.12s;--r:-16deg;--s:0.9"></span><span class="yellow" style="--x:45;--d:5.0s;--delay:1.4000000000000001s;--r:-5deg;--s:1.0"></span><span class="white" style="--x:54;--d:5.55s;--delay:0.0s;--r:6deg;--s:1.1"></span><span class="yellow" style="--x:63;--d:6.1s;--delay:0.28s;--r:17deg;--s:1.2000000000000002"></span><span class="white" style="--x:72;--d:6.65s;--delay:0.56s;--r:-12deg;--s:0.9"></span><span class="yellow" style="--x:81;--d:7.2s;--delay:0.8400000000000001s;--r:-1deg;--s:1.0"></span><span class="white" style="--x:90;--d:5.0s;--delay:1.12s;--r:10deg;--s:1.1"></span><span class="yellow" style="--x:99;--d:5.55s;--delay:1.4000000000000001s;--r:-19deg;--s:1.2000000000000002"></span><span class="white" style="--x:8;--d:6.1s;--delay:0.0s;--r:-8deg;--s:0.9"></span><span class="yellow" style="--x:17;--d:6.65s;--delay:0.28s;--r:3deg;--s:1.0"></span><span class="white" style="--x:26;--d:7.2s;--delay:0.56s;--r:14deg;--s:1.1"></span><span class="yellow" style="--x:35;--d:5.0s;--delay:0.8400000000000001s;--r:-15deg;--s:1.2000000000000002"></span><span class="white" style="--x:44;--d:5.55s;--delay:1.12s;--r:-4deg;--s:0.9"></span><span class="yellow" style="--x:53;--d:6.1s;--delay:1.4000000000000001s;--r:7deg;--s:1.0"></span></div>
       <a class="venue-hotspot wedding-venue" href="https://maps.app.goo.gl/7RafZ6vhFmiamHB5A" target="_blank" rel="noopener" aria-label="Open Wedding venue in Google Maps"></a>
+      <a class="venue-click-here click-wedding" href="https://maps.app.goo.gl/7RafZ6vhFmiamHB5A" target="_blank" rel="noopener noreferrer" aria-label="Click Here for Wedding location on Google Maps"></a>
     </section>
 
     
 
 <section class="scene location-scene" id="dining" data-link="https://share.google/771Np0IxNXsMEHuXs">
       <img src="assets/beegaru.png" alt="Beegaru Oota invitation" class="bg contain-top" />
-      <div class="dining-lights" aria-hidden="true"><span style="left:8%"></span><span style="left:19%"></span><span style="left:30%"></span><span style="left:41%"></span><span style="left:52%"></span><span style="left:63%"></span><span style="left:74%"></span><span style="left:85%"></span></div>
       <a class="venue-hotspot beegaru-venue-hotspot" href="https://share.google/771Np0IxNXsMEHuXs" target="_blank" rel="noopener" aria-label="Open Beegaru Oota venue in Google Maps"></a>
+      <a class="venue-click-here click-dining" href="https://share.google/771Np0IxNXsMEHuXs" target="_blank" rel="noopener noreferrer" aria-label="Click Here for Beegaru Oota location on Google Maps"></a>
     </section>
   </main>
 
-  <script src="script.js?v=54-verified"></script>
+  <script src="script.js?v=62-no-black"></script>
 </body>
 </html>
