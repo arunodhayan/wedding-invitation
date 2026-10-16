@@ -198,3 +198,10 @@ button,a{-webkit-tap-highlight-color:transparent}
 #doorOverlay.hide {
   background: transparent !important;
 }
+
+
+/* v63: location targets aligned to the user-supplied Haldi and Reception artwork */
+.haldi-venue { left: 37%; top: 43.2%; width: 36%; height: 4.2%; }
+.click-haldi { left: 35%; top: 47.0%; width: 35%; height: 4.0%; }
+.reception-venue { left: 52%; top: 26.0%; width: 41%; height: 5.8%; }
+.click-reception { left: 55%; top: 31.7%; width: 39%; height: 4.4%; }
