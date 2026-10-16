@@ -205,3 +205,47 @@ button,a{-webkit-tap-highlight-color:transparent}
 .click-haldi { left: 35%; top: 47.0%; width: 35%; height: 4.0%; }
 .reception-venue { left: 52%; top: 26.0%; width: 41%; height: 5.8%; }
 .click-reception { left: 55%; top: 31.7%; width: 39%; height: 4.4%; }
+
+
+/* v64: Actual clickable zones over the printed Nature Knots venue and location text. */
+#reception .location-tap-area,
+#wedding .location-tap-area {
+  display:block;
+  position:absolute;
+  z-index:30;
+  background:transparent;
+  cursor:pointer;
+  pointer-events:auto;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:rgba(251,214,120,.18);
+}
+#reception .location-tap-area:focus-visible,
+#wedding .location-tap-area:focus-visible {
+  outline:3px solid #ffe09b;
+  outline-offset:-3px;
+  border-radius:8px;
+}
+/* New Reception art: location title and gold click bar near upper right. */
+#reception .reception-location-tap {
+  left:52%; top:25%; width:43%; height:11.5%;
+}
+/* Wedding art: Nature Knots and underlined Click Here near center right. */
+#wedding .wedding-location-tap {
+  left:54%; top:59.2%; width:39%; height:9%;
+}
+
+
+/* v66: match the ACTUAL printed location text in the supplied wedding image.
+   The previous hotspot started at y=59.2%, below the printed y=54–56% words. */
+#wedding .wedding-location-tap {
+  left: 56% !important;
+  top: 48.5% !important;
+  width: 37% !important;
+  height: 9.8% !important;
+  z-index: 45 !important;
+  display: block !important;
+  position: absolute !important;
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  cursor: pointer !important;
+}
