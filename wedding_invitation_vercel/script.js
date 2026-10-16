@@ -5,6 +5,35 @@
   const door = document.getElementById('doorOverlay');
   const openButton = document.getElementById('openInviteBtn');
   const hint = document.getElementById('scrollTip');
+  const music = document.getElementById('weddingMusic');
+  const musicToggle = document.getElementById('musicToggle');
+
+  function refreshMusicButton() {
+    if (!music || !musicToggle) return;
+    const playing = !music.paused;
+    musicToggle.textContent = playing ? '🔊' : '🔇';
+    musicToggle.setAttribute('aria-label', playing ? 'Pause music' : 'Play music');
+    musicToggle.setAttribute('title', playing ? 'Pause music' : 'Play music');
+    musicToggle.setAttribute('aria-pressed', String(playing));
+  }
+  if (music) {
+    music.addEventListener('play', refreshMusicButton);
+    music.addEventListener('pause', refreshMusicButton);
+    music.addEventListener('ended', refreshMusicButton);
+  }
+  if (musicToggle && music) {
+    musicToggle.addEventListener('click', () => {
+      if (music.paused) {
+        const attempt = music.play();
+        if (attempt && typeof attempt.catch === 'function') {
+          attempt.catch(() => refreshMusicButton());
+        }
+      } else {
+        music.pause();
+      }
+      refreshMusicButton();
+    });
+  }
   if (!story || !door || !openButton) return;
   let opened = false;
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -22,6 +51,18 @@
   function openInvitation() {
     if (opened) return;
     opened = true;
+    // Call play inside tap handler, not in the door-animation timer.
+    // Safari and other mobile browsers often require direct user activation.
+    if (music) {
+      const attempt = music.play();
+      if (attempt && typeof attempt.catch === 'function') {
+        attempt.catch(() => refreshMusicButton());
+      }
+    }
+    if (musicToggle) {
+      musicToggle.hidden = false;
+      refreshMusicButton();
+    }
     story.scrollTop = 0;
     door.classList.add('open');
 

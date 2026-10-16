@@ -1,8 +1,13 @@
-# Wedding Invitation — Wedding venue link corrected (v66)
+# Wedding Invitation — Music on Open (v67)
 
-- Repositioned Wedding clickable area so it covers the printed **NATURE KNOTS** and **Click here to open location** text in the latest wedding artwork.
-- The Wedding text now links directly to https://maps.app.goo.gl/7RafZ6vhFmiamHB5A in the same browser tab, avoiding mobile pop-up/new-tab behavior.
-- Changed HTML resource cache versions so updated CSS and image load after redeployment.
-- All other cards, images, animations, door behavior, and venue URLs unchanged.
+Based on v66 (Wedding location link fixed).
 
-Deploy the **contents** of this ZIP at your Vercel project root (with index.html and assets/ at the top level).
+- Your previously uploaded 45-second MP3 is included as `audio/wedding-song.mp3`.
+- It starts on the user tap/click of **Open Invitation**, including during the door animation.
+- Music loops while browsing the invitation.
+- A small speaker button appears after opening to pause or resume playback.
+- Existing artwork, links, event order, animations and mobile scroll are preserved.
+
+Note: Browsers generally allow audio from a user tap, but some device settings may still block playback. Guests can then press the speaker button.
+
+Deploy the full ZIP contents to your Vercel project root, including the `audio` folder.

@@ -249,3 +249,17 @@ button,a{-webkit-tap-highlight-color:transparent}
   touch-action: manipulation !important;
   cursor: pointer !important;
 }
+
+/* v67: discreet guest-controlled music button after opening. */
+.music-toggle{
+  position:fixed;z-index:25;
+  top:max(12px, env(safe-area-inset-top));
+  right:max(12px, calc((100vw - min(520px, 100vw))/2 + 12px));
+  width:44px;height:44px;padding:0;
+  border:1px solid rgba(255,237,205,.45);border-radius:50%;
+  background:rgba(27,20,31,.66);box-shadow:0 4px 16px rgba(0,0,0,.2);
+  color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+}
+.music-toggle[hidden]{display:none !important;}
+.music-toggle:focus-visible{outline:2px solid #f4cd8a;outline-offset:2px;}
